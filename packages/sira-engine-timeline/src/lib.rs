@@ -9,12 +9,15 @@ pub mod timecode_sync;
 pub mod track;
 pub mod trimming;
 pub mod exporter;
+pub mod nle_timeline;
 
 pub use timeline::*;
 pub use timecode_sync::*;
 pub use track::*;
 pub use trimming::*;
 pub use exporter::*;
+pub use nle_timeline::*;
+
 
 use std::collections::HashMap;
 use std::sync::RwLock;

@@ -9,12 +9,19 @@ pub mod compositor;
 pub mod upscaler;
 pub mod checkpoint;
 pub mod container;
+pub mod layer_compositor;
+pub mod vfx_engine;
+pub mod color_suite;
 
 pub use dispatcher::*;
 pub use compositor::*;
 pub use upscaler::*;
 pub use checkpoint::*;
 pub use container::*;
+pub use layer_compositor::*;
+pub use vfx_engine::*;
+pub use color_suite::*;
+
 
 use sira_types::SiraResult;
 

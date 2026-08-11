@@ -8,8 +8,10 @@ pub mod layout;
 pub mod camera_bounds;
 pub mod props;
 pub mod occlusion;
+pub mod scene_compositor;
 
 pub use layout::{Transform3D, SpatialSceneNode};
+pub use scene_compositor::*;
 
 pub struct SceneEngine;
 
@@ -26,3 +28,4 @@ impl SceneEngine {
         occlusion::verify_spatial_collisions(scene_id)
     }
 }
+
