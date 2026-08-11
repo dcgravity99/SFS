@@ -40,7 +40,11 @@ impl SfspProject {
         let mut manifest = SfspManifest::default();
         manifest.title = project_name.to_string();
 
-        ProjectLock::acquire(&project_dir)?;
+        match ProjectLock::acquire(&project_dir) {
+            SiraResult::Error(err) => return SiraResult::Error(err),
+            SiraResult::Cancelled { reason } => return SiraResult::Cancelled { reason },
+            _ => {}
+        }
 
         SiraResult::Success(Self {
             path: project_dir,
@@ -57,7 +61,11 @@ impl SfspProject {
             SfspManifest::default()
         };
 
-        ProjectLock::acquire(project_path)?;
+        match ProjectLock::acquire(project_path) {
+            SiraResult::Error(err) => return SiraResult::Error(err),
+            SiraResult::Cancelled { reason } => return SiraResult::Cancelled { reason },
+            _ => {}
+        }
 
         SiraResult::Success(Self {
             path: project_path.to_path_buf(),
