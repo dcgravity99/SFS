@@ -1,0 +1,6 @@
+{
+  "tenant_workspace": "Enterprise Multi-Tenant Workspace",
+  "tenant_isolation": "Tenant Data Isolation Boundary",
+  "storage_quota": "Storage Quota Allocation",
+  "seat_quota": "Artist Seat Limit"
+}

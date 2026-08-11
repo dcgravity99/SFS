@@ -1,0 +1,36 @@
+[package]
+name = "sira_engine_workflow"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+sira_types = { path = "../sira-types" }
+sira_config = { path = "../sira-config" }
+sira_diagnostics = { path = "../sira-diagnostics" }
+sfsp_engine = { path = "../sfsp-engine" }
+asset_db = { path = "../asset-db" }
+sira_hal = { path = "../hal" }
+sira_core = { path = "../sira-core" }
+sira_ai_provider = { path = "../sira-ai-provider" }
+workflow_engine = { path = "../workflow-engine" }
+experience_layer = { path = "../experience-layer" }
+resource_manager = { path = "../resource-manager" }
+cache_manager = { path = "../cache-manager" }
+plugin_runtime = { path = "../plugin-runtime" }
+sira_engine_story = { path = "../sira-engine-story" }
+sira_engine_character = { path = "../sira-engine-character" }
+sira_engine_actor = { path = "../sira-engine-actor" }
+sira_engine_scene = { path = "../sira-engine-scene" }
+sira_engine_director = { path = "../sira-engine-director" }
+sira_engine_cinematography = { path = "../sira-engine-cinematography" }
+sira_engine_audio = { path = "../sira-engine-audio" }
+sira_engine_timeline = { path = "../sira-engine-timeline" }
+sira_engine_render = { path = "../sira-engine-render" }
+sira_engine_asset = { path = "../sira-engine-asset" }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "1.0"
+uuid = { version = "1.6", features = ["v4", "v7", "serde"] }

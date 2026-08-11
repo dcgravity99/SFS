@@ -1,0 +1,6 @@
+{
+  "ai_acceleration_title": "உள்ளூர் AI மாதிரி முடுக்கம் (Local AI Acceleration)",
+  "precision_optimization": "மாதிரி துல்லிய மேம்பாடு (FP16 / INT8)",
+  "vram_tiling": "VRAM நினைவக டைலிங் கட்டுப்பாடு",
+  "inference_speedup": "நரம்பியல் ஊக வேகம் (Neural Inference Speedup)"
+}

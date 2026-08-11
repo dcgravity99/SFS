@@ -1,0 +1,9 @@
+{
+  "asset_workspace": "Asset & Media Workspace",
+  "media_gallery": "Media Asset Gallery",
+  "asset_metadata": "Asset Metadata",
+  "storage_quota": "Storage Quota Utilization",
+  "category": "Category",
+  "file_size": "File Size",
+  "checksum": "SHA-256 Checksum"
+}

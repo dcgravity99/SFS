@@ -1,0 +1,10 @@
+{
+  "prompts_workspace": "செயற்கை நுண்ணறிவு குறிப்புத் தயாரிப்பு (AI Prompt Builder)",
+  "positive_prompt": "நேர்மறை குறிப்பு (Positive Prompt)",
+  "negative_prompt": "எதிர்மறை குறிப்பு (Negative Prompt)",
+  "cfg_scale": "வழிகாட்டுதல் அளவு (CFG Scale)",
+  "steps": "படிநிலைகள் (Steps)",
+  "seed": "விதை எண் (Seed)",
+  "sampler": "மாதிரி (Sampler)",
+  "submit_generation": "உருவாக்கத்தைத் தொடங்கு (Submit Job)"
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Siragugal Film Studio Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+  "features": {
+    "ghcr.io/devcontainers/features/rust:1": {
+      "version": "1.76.0"
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20.11.1"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "rust-lang.rust-analyzer",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "tamasfe.even-better-toml"
+      ]
+    }
+  },
+  "postCreateCommand": "node tools/scripts/bootstrap.js"
+}

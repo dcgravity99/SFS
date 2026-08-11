@@ -1,0 +1,24 @@
+[package]
+name = "sira_engine_scene"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+sira_types = { path = "../sira-types" }
+sira_config = { path = "../sira-config" }
+sira_diagnostics = { path = "../sira-diagnostics" }
+sfsp_engine = { path = "../sfsp-engine" }
+asset_db = { path = "../asset-db" }
+sira_core = { path = "../sira-core" }
+sira_ai_provider = { path = "../sira-ai-provider" }
+workflow_engine = { path = "../workflow-engine" }
+experience_layer = { path = "../experience-layer" }
+sira_engine_story = { path = "../sira-engine-story" }
+sira_engine_character = { path = "../sira-engine-character" }
+sira_engine_actor = { path = "../sira-engine-actor" }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "1.0"

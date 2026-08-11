@@ -1,0 +1,10 @@
+{
+  "prompts_workspace": "AI Prompt Builder Workspace",
+  "positive_prompt": "Positive Prompt",
+  "negative_prompt": "Negative Prompt",
+  "cfg_scale": "CFG Guidance Scale",
+  "steps": "Sampling Steps",
+  "seed": "Random Seed",
+  "sampler": "Sampler Algorithm",
+  "submit_generation": "Submit Generation Job"
+}

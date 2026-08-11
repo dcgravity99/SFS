@@ -1,0 +1,6 @@
+{
+  "automation_title": "தயாரிப்பு ஆட்டோமேஷன் (Local Production Automation)",
+  "build_pipeline": "காட்சி தொகுப்பு ஆட்டோமேஷன்",
+  "quality_validation": "தரக் கட்டுப்பாட்டுச் சரிபார்ப்பு (4K/8K & ACEScg)",
+  "master_package": "முதன்மைத் திரைப்படத் தொகுப்பு"
+}

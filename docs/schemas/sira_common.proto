@@ -1,0 +1,38 @@
+// ============================================================================
+// Siragugal Film Studio
+// Copyright (C) 2026 Siragugal Film Studio Contributors
+// Licensed under Apache-2.0 or MIT.
+// ============================================================================
+
+syntax = "proto3";
+
+package sira.common;
+
+// Standard Error Response
+message SiraError {
+  int32 code = 1;              // Error range: SIRA-1000 to SIRA-7999
+  string message = 2;          // Detailed human-readable error description
+  string subsystem = 3;        // Subsystem tag (e.g., sira-hal, sira-core)
+  string correlation_id = 4;   // Unique request correlation ID
+}
+
+// Subsystem Health Status
+enum HealthStatus {
+  HEALTH_STATUS_UNSPECIFIED = 0;
+  HEALTH_STATUS_HEALTHY = 1;
+  HEALTH_STATUS_DEGRADED = 2;
+  HEALTH_STATUS_UNHEALTHY = 3;
+}
+
+// Core System Ping Request
+message PingRequest {
+  string client_version = 1;
+  int64 timestamp_ms = 2;
+}
+
+// Core System Ping Response
+message PingResponse {
+  HealthStatus status = 1;
+  string server_version = 2;
+  int64 timestamp_ms = 3;
+}

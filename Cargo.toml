@@ -1,0 +1,25 @@
+[workspace]
+resolver = "2"
+members = [
+    "packages/*",
+    "apps/*",
+]
+exclude = [
+    "packages/core-types",
+    "apps/studio-ui",
+]
+
+
+
+[workspace.package]
+version = "0.1.0-alpha"
+edition = "2021"
+authors = ["Siragugal Film Studio Contributors"]
+license = "Apache-2.0 OR MIT"
+repository = "https://github.com/SiragugalFilmStudio/SiragugalFilmStudio"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"

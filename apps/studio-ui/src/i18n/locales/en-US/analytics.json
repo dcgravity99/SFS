@@ -1,0 +1,6 @@
+{
+  "analytics_title": "Render Farm Performance Analytics",
+  "gpu_load": "GPU Workload Load Balancing",
+  "render_cost": "Estimated Render Cost & Time",
+  "bottlenecks": "Rendering Performance Bottlenecks"
+}

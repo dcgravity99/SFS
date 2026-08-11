@@ -1,0 +1,16 @@
+[package]
+name = "sira-tenant-engine"
+version = "1.0.0"
+edition = "2021"
+authors = ["Siragugal Film Studio Contributors"]
+license = "MIT OR Apache-2.0"
+description = "Enterprise Multi-Tenant Studio & Production Workspace Engine for Siragugal Film Studio"
+
+[dependencies]
+sira_types = { path = "../sira-types" }
+sira-analytics-engine = { path = "../sira-analytics-engine" }
+sira-security-engine = { path = "../sira-security-engine" }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+uuid = { version = "1.6", features = ["v7", "serde"] }
+thiserror = "1.0"

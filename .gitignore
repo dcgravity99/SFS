@@ -1,0 +1,30 @@
+# Node / pnpm
+node_modules/
+.pnpm-store/
+dist/
+build/
+.next/
+*.log
+
+# Rust / Cargo
+target/
+**/*.rs.bk
+Cargo.lock
+
+# C++ Build & IDE
+build/
+out/
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+
+# OS Generated Files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Project Media Artifacts (Local Scratch)
+scratch/
+*.sfsp.tmp

@@ -1,0 +1,6 @@
+{
+  "identity_title": "Enterprise Identity & SSO",
+  "sso_login": "Single Sign-On Login",
+  "mfa_required": "Multi-Factor Authentication Required",
+  "session_active": "Identity Session Active"
+}

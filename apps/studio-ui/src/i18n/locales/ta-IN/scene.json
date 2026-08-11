@@ -1,0 +1,11 @@
+{
+  "scene_graph": "காட்சி அமைப்பு",
+  "transform": "மாற்றம்",
+  "camera": "கேமரா",
+  "position": "நிலை",
+  "rotation": "சுழற்சி",
+  "scale": "அளவு",
+  "asset_picker": "சொத்து தேர்வு",
+  "add_node": "முனை சேர்",
+  "occlusion": "மறைப்பு சரிபார்ப்பு"
+}

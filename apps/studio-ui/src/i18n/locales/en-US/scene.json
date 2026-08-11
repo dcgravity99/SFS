@@ -1,0 +1,11 @@
+{
+  "scene_graph": "Scene Graph",
+  "transform": "Transform",
+  "camera": "Camera",
+  "position": "Position",
+  "rotation": "Rotation",
+  "scale": "Scale",
+  "asset_picker": "Asset Picker",
+  "add_node": "Add Node",
+  "occlusion": "Occlusion Check"
+}

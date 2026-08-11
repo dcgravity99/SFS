@@ -1,0 +1,6 @@
+{
+  "identity_title": "நிறுவன அடையாள மேலாண்மை (Enterprise Identity)",
+  "sso_login": "நிறுவன கணக்குடன் நுழை (SSO Login)",
+  "mfa_required": "இருபடிச் சரிபார்ப்பு தேவை (MFA Required)",
+  "session_active": "அமர்வு செயலில் உள்ளது"
+}

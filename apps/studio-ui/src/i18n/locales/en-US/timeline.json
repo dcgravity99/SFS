@@ -1,0 +1,9 @@
+{
+  "timeline_workspace": "NLE Timeline Editor",
+  "split_clip": "Razor Split",
+  "trim_in": "Trim In",
+  "trim_out": "Trim Out",
+  "timecode": "SMPTE Timecode",
+  "track_lock": "Lock Track",
+  "multi_track": "Multi-Track Canvas"
+}

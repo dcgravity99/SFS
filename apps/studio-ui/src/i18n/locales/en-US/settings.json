@@ -1,0 +1,10 @@
+{
+  "settings_workspace": "Studio Settings & System Configuration",
+  "preferences": "Global System Preferences",
+  "hardware_accel": "Hardware Acceleration Controls",
+  "locale_theme": "Language & Visual Theme",
+  "security_audit": "Enterprise Security Audit Trail",
+  "auto_save": "Auto-Save Interval",
+  "language": "Primary Product Language",
+  "theme": "Appearance Theme"
+}

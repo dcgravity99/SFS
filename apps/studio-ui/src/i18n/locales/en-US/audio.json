@@ -1,0 +1,11 @@
+{
+  "audio_workspace": "Audio Workspace",
+  "dialogue_track": "Dialogue Track",
+  "waveform": "Waveform Viewer",
+  "sound_library": "Sound Library",
+  "mixer": "Audio Mixer",
+  "volume": "Volume dB",
+  "pan": "Pan L/R",
+  "mute": "Mute",
+  "solo": "Solo"
+}

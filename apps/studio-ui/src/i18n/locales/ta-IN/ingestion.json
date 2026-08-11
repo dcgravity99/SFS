@@ -1,0 +1,6 @@
+{
+  "ingestion_title": "உலகளாவிய ஊடகச் சேர்க்கை (Universal Media Ingestion)",
+  "proxy_generation": "1080p ப்ராக்ஸி உருவாக்குதல்",
+  "smpte_timecode": "SMPTE டைம்கோடு பிரித்தெடுத்தல்",
+  "aces_color": "ACEScg வண்ண மாற்றக் கட்டுப்பாடு"
+}

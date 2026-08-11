@@ -1,0 +1,19 @@
+[package]
+name = "studio-ui-runner"
+version = "1.0.0"
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[[bin]]
+name = "siragugal-film-studio"
+path = "src/main.rs"
+
+[dependencies]
+tauri = { version = "2.0.0-rc", features = [] }
+zeroize = "=1.8.1"
+sira_studio_app = { path = "../../../packages/sira-studio-app" }
+sira_types = { path = "../../../packages/sira-types" }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"

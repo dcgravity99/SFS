@@ -1,0 +1,20 @@
+import React from 'react';
+
+interface CardProps {
+  children: React.ReactNode;
+  className?: string;
+  title?: string;
+}
+
+export const Card: React.FC<CardProps> = ({ children, className = '', title }) => {
+  return (
+    <div className={`glass-card rounded-xl p-4 border border-border/50 ${className}`}>
+      {title && (
+        <h3 className="text-sm font-semibold text-slate-200 mb-3 border-b border-border/40 pb-2">
+          {title}
+        </h3>
+      )}
+      {children}
+    </div>
+  );
+};

@@ -1,0 +1,10 @@
+{
+  "render_workspace": "வெளியீட்டுத் துறை (Render Studio)",
+  "render_queue": "ரெண்டர் வரிசை (Render Queue)",
+  "progress_monitor": "முன்னேற்றக் கண்காணிப்பு",
+  "gpu_usage": "GPU பயன்பாடு (GPU Usage)",
+  "recovery": "தோல்வி மீட்பு (Job Recovery)",
+  "submit_job": "ரெண்டர் தொடங்கு (Submit Job)",
+  "cancel_job": "ரெண்டர் ரத்து",
+  "retry_job": "மீண்டும் முயற்சி"
+}

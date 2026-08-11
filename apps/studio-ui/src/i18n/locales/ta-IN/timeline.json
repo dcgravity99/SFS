@@ -1,0 +1,9 @@
+{
+  "timeline_workspace": "நேரக்கோடு திருத்தி (NLE Timeline)",
+  "split_clip": "வெட்டு (Split)",
+  "trim_in": "தொடக்க ஒழுங்கு (Trim In)",
+  "trim_out": "முடிவு ஒழுங்கு (Trim Out)",
+  "timecode": "நேரக் குறியீடு (SMPTE)",
+  "track_lock": "தடப் பூட்டு",
+  "multi_track": "பல-தடங்கள் (V1-V4, A1-A4)"
+}

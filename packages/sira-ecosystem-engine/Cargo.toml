@@ -1,0 +1,18 @@
+[package]
+name = "sira-ecosystem-engine"
+version = "1.0.0"
+edition = "2021"
+authors = ["Siragugal Film Studio Contributors"]
+license = "MIT OR Apache-2.0"
+description = "Enterprise Global Production Ecosystem & Master Release Certification Platform for Siragugal Film Studio"
+
+[dependencies]
+sira_types = { path = "../sira-types" }
+sira-ingestion-engine = { path = "../sira-ingestion-engine" }
+sira-ai-acceleration-engine = { path = "../sira-ai-acceleration-engine" }
+sira-automation-engine = { path = "../sira-automation-engine" }
+sira-tenant-engine = { path = "../sira-tenant-engine" }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+uuid = { version = "1.6", features = ["v7", "serde"] }
+thiserror = "1.0"

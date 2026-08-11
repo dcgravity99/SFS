@@ -1,0 +1,17 @@
+[package]
+name = "resource_manager"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+sira_types = { path = "../sira-types" }
+sira_diagnostics = { path = "../sira-diagnostics" }
+sira_hal = { path = "../hal" }
+sira_core = { path = "../sira-core" }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "1.0"
+sysinfo = "0.30"

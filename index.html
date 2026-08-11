@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Siragugal Film Studio - Premier Film Production, Sound Stages, Equipment Rentals, and Post-Production Services.">
+    <title>Siragugal Film Studio | Premier Cinematic Production & Sound Stages</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome / Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="dark-theme">
+    <!-- Background Ambient Glows -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+
+    <!-- Header & Navigation -->
+    <header class="studio-header glass-panel">
+        <div class="header-container">
+            <a href="#hero" class="brand-logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-feather-pointed"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="brand-name">SIRAGUGAL</span>
+                    <span class="brand-sub">FILM STUDIO</span>
+                </div>
+            </a>
+
+            <nav class="main-nav">
+                <a href="#showcase" class="nav-link active" data-nav="showcase"><i class="fa-solid fa-film"></i> Showcase</a>
+                <a href="#facilities" class="nav-link" data-nav="facilities"><i class="fa-solid fa-warehouse"></i> Facilities & Gear</a>
+                <a href="#client-portal" class="nav-link" data-nav="client-portal"><i class="fa-solid fa-photo-film"></i> Client Review</a>
+                <a href="#admin" class="nav-link" data-nav="admin"><i class="fa-solid fa-chart-line"></i> Operations</a>
+            </nav>
+
+            <div class="header-actions">
+                <div class="studio-status-pill">
+                    <span class="status-dot pulsing"></span>
+                    <span class="status-text">STAGE A: LIVE SHOOT</span>
+                </div>
+                <button class="btn btn-primary glass-btn" onclick="openBookingDrawer()">
+                    <i class="fa-solid fa-calendar-plus"></i> Book Studio
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-bg-wrapper">
+                <img src="assets/images/hero_banner.jpg" alt="Siragugal Film Studio" class="hero-bg-img">
+                <div class="hero-overlay"></div>
+            </div>
+            
+            <div class="hero-content">
+                <div class="badge-tag">
+                    <i class="fa-solid fa-crown"></i> INDIA'S NEXT-GEN VIRTUAL PRODUCTION HUB
+                </div>
+                <h1 class="hero-title">
+                    Crafting <span class="gold-gradient">Cinematic Legends</span><br>With Unmatched Vision
+                </h1>
+                <p class="hero-subtitle">
+                    State-of-the-art sound stages, ARRI Alexa 35 camera packages, virtual LED volume walls, and world-class Dolby Atmos post-production suites.
+                </p>
+
+                <div class="hero-cta-group">
+                    <button class="btn btn-gold btn-lg" onclick="openShowreelModal()">
+                        <i class="fa-solid fa-play"></i> Watch Studio Reel 2026
+                    </button>
+                    <a href="#facilities" class="btn btn-outline btn-lg">
+                        <i class="fa-solid fa-sliders"></i> Explore Equipment & Stages
+                    </a>
+                </div>
+
+                <!-- Live Quick Stats Bar -->
+                <div class="quick-stats-bar glass-card">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="165">165+</span>
+                        <span class="stat-label">Feature Films Produced</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">120,000</span>
+                        <span class="stat-label">Sq. Ft. Sound Stages</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">48</span>
+                        <span class="stat-label">National & International Awards</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">4K HDR Dolby Atmos Ready</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Showcase & Filmography Section -->
+        <section id="showcase" class="section-container">
+            <div class="section-header">
+                <div>
+                    <span class="section-eyebrow">OUR CINEMATIC PORTFOLIO</span>
+                    <h2 class="section-title">Masterpieces Produced at Siragugal</h2>
+                </div>
+                <div class="filter-pills" id="showcase-filters">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="Feature Film">Feature Films</button>
+                    <button class="filter-btn" data-filter="Commercial">Commercials</button>
+                    <button class="filter-btn" data-filter="Short Film">Short Films</button>
+                    <button class="filter-btn" data-filter="VFX & Post">VFX & Post</button>
+                </div>
+            </div>
+
+            <!-- Film Grid -->
+            <div class="film-grid" id="film-grid-container">
+                <!-- Dynamically Rendered by JS -->
+            </div>
+        </section>
+
+        <!-- Facilities & Equipment Rental Section -->
+        <section id="facilities" class="section-container bg-surface">
+            <div class="section-header">
+                <div>
+                    <span class="section-eyebrow">PRODUCTION INFRASTRUCTURE</span>
+                    <h2 class="section-title">Sound Stages & Gear Rentals</h2>
+                </div>
+                <div class="booking-summary-badge" onclick="toggleCartDrawer()">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>Selected Gear: </span>
+                    <strong id="cart-count">0 items</strong>
+                    <span class="badge-price" id="cart-total">$0/day</span>
+                </div>
+            </div>
+
+            <!-- Facilities Tab Switcher -->
+            <div class="sub-nav-tabs">
+                <button class="tab-btn active" onclick="switchFacilityTab('stages')">
+                    <i class="fa-solid fa-building-user"></i> Sound Stages & Studios
+                </button>
+                <button class="tab-btn" onclick="switchFacilityTab('gear')">
+                    <i class="fa-solid fa-camera"></i> Camera, Lighting & Audio Packages
+                </button>
+                <button class="tab-btn" onclick="switchFacilityTab('post')">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> Post-Production & Dubbing Suites
+                </button>
+            </div>
+
+            <!-- Tab Content Container -->
+            <div id="facilities-content-container" class="facilities-grid">
+                <!-- Dynamically Rendered by JS -->
+            </div>
+        </section>
+
+        <!-- Director's Client Review Portal Section -->
+        <section id="client-portal" class="section-container">
+            <div class="section-header">
+                <div>
+                    <span class="section-eyebrow">CLIENT COLLABORATION SUITE</span>
+                    <h2 class="section-title">Director's Rough-Cut Screening & Review</h2>
+                </div>
+                <div class="project-selector-dropdown">
+                    <label><i class="fa-solid fa-folder-open"></i> Active Project: </label>
+                    <select id="client-project-select" onchange="loadClientProjectData()">
+                        <option value="p1">Wings of Destiny (2026) - Reel 2 Color & Sound Cut</option>
+                        <option value="p2">Titan Commercial - Final VFX Pass</option>
+                        <option value="p3">Echoes of Silence - Atmos Mix Approval</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="screening-room-wrapper glass-card">
+                <div class="player-column">
+                    <div class="video-container">
+                        <video id="screening-video" poster="assets/images/poster_wings.jpg" controls>
+                            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                        <div class="timecode-overlay" id="live-timecode">00:00:00:00</div>
+                    </div>
+
+                    <div class="screening-controls-bar">
+                        <div class="clip-info">
+                            <h3 id="clip-title">Wings of Destiny - Sequence 4 (Night Battle Cut)</h3>
+                            <p class="clip-meta">4K DCI ProRes 4444 XQ | 24.00 fps | Rec.2020 PQ | Director: R. Varma</p>
+                        </div>
+                        <div class="clip-actions">
+                            <button class="btn btn-sm btn-outline" onclick="stampCurrentTime()">
+                                <i class="fa-solid fa-clock"></i> Capture Timecode
+                            </button>
+                            <button class="btn btn-sm btn-gold" onclick="approveCurrentCut()">
+                                <i class="fa-solid fa-circle-check"></i> Approve Cut
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timecoded Feedback Sidebar -->
+                <div class="feedback-column">
+                    <div class="feedback-header">
+                        <h4><i class="fa-solid fa-comments"></i> Director & Producer Notes</h4>
+                        <span class="badge" id="notes-count">3 Notes</span>
+                    </div>
+
+                    <div class="add-note-box">
+                        <div class="input-row">
+                            <input type="text" id="note-timecode" placeholder="00:01:24" readonly>
+                            <input type="text" id="note-text" placeholder="Add feedback at current timestamp...">
+                        </div>
+                        <button class="btn btn-primary btn-block" onclick="submitDirectorNote()">
+                            <i class="fa-solid fa-paper-plane"></i> Post Timestamped Note
+                        </button>
+                    </div>
+
+                    <div class="notes-list" id="notes-list-container">
+                        <!-- Dynamically Populated -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Studio Operations Command Center Section -->
+        <section id="admin" class="section-container bg-surface">
+            <div class="section-header">
+                <div>
+                    <span class="section-eyebrow">STUDIO MANAGEMENT SYSTEM</span>
+                    <h2 class="section-title">Operations & Resource Command Center</h2>
+                </div>
+                <div class="admin-user-pill">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Admin" class="avatar">
+                    <div>
+                        <strong>Chief Executive Architect</strong>
+                        <span>Siragugal Operations</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Operations Dashboard Metrics -->
+            <div class="admin-stats-grid">
+                <div class="admin-stat-card glass-card">
+                    <div class="stat-icon gold"><i class="fa-solid fa-building-circle-check"></i></div>
+                    <div class="stat-details">
+                        <span class="label">Sound Stage Utilization</span>
+                        <h3 class="value">92% <span class="trend positive"><i class="fa-solid fa-arrow-up"></i> +8%</span></h3>
+                        <p class="subtext">11 of 12 Stages Active Today</p>
+                    </div>
+                </div>
+
+                <div class="admin-stat-card glass-card">
+                    <div class="stat-icon cyan"><i class="fa-solid fa-camera-retro"></i></div>
+                    <div class="stat-details">
+                        <span class="label">Camera Rigs Deployed</span>
+                        <h3 class="value">14 / 16</h3>
+                        <p class="subtext">ARRI Alexa 35 & RED V-Raptor</p>
+                    </div>
+                </div>
+
+                <div class="admin-stat-card glass-card">
+                    <div class="stat-icon green"><i class="fa-solid fa-sack-dollar"></i></div>
+                    <div class="stat-details">
+                        <span class="label">Monthly Rental Revenue</span>
+                        <h3 class="value">$248,500</h3>
+                        <p class="subtext">Q3 Booking Target Reached</p>
+                    </div>
+                </div>
+
+                <div class="admin-stat-card glass-card">
+                    <div class="stat-icon purple"><i class="fa-solid fa-clapperboard"></i></div>
+                    <div class="stat-details">
+                        <span class="label">Active Productions</span>
+                        <h3 class="value">7 Projects</h3>
+                        <p class="subtext">4 Features, 2 Ads, 1 Series</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bookings & Live Schedule Table -->
+            <div class="admin-table-card glass-card">
+                <div class="table-header">
+                    <h3><i class="fa-solid fa-calendar-days"></i> Sound Stage Shooting Schedule</h3>
+                    <div class="table-actions">
+                        <input type="text" id="schedule-search" placeholder="Search production..." onkeyup="filterAdminSchedule()">
+                        <button class="btn btn-sm btn-outline" onclick="exportScheduleCSV()"><i class="fa-solid fa-download"></i> Export CSV</button>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Booking ID</th>
+                                <th>Production Title</th>
+                                <th>Sound Stage / Suite</th>
+                                <th>Dates</th>
+                                <th>Gear Package</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-schedule-tbody">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="studio-footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-feather-pointed"></i>
+                </div>
+                <h3>SIRAGUGAL FILM STUDIO</h3>
+                <p>Empowering directors and producers with cutting-edge sound stages, high-end film cameras, virtual production volume walls, and Atmos audio post-production.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>Studios & Facilities</h4>
+                <ul>
+                    <li><a href="#facilities">Sound Stage A (LED Volume)</a></li>
+                    <li><a href="#facilities">Sound Stage B (Green Screen)</a></li>
+                    <li><a href="#facilities">Dolby Atmos Mastering Room</a></li>
+                    <li><a href="#facilities">Baselight Color Grading DI Suite</a></li>
+                    <li><a href="#facilities">Production Office Suites</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>Gear & Services</h4>
+                <ul>
+                    <li><a href="#facilities">ARRI & RED Camera Packages</a></li>
+                    <li><a href="#facilities">Cooke Anamorphic Lenses</a></li>
+                    <li><a href="#facilities">Aputure & Creamsource Lighting</a></li>
+                    <li><a href="#facilities">Technocrane & Motion Control</a></li>
+                    <li><a href="#facilities">DIT & On-Set Data Management</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>Contact Studios</h4>
+                <ul class="contact-info">
+                    <li><i class="fa-solid fa-location-dot"></i> Siragugal Film City, Film Nagar, Chennai</li>
+                    <li><i class="fa-solid fa-phone"></i> +91 44 2855 9000</li>
+                    <li><i class="fa-solid fa-envelope"></i> bookings@siragugafilmstudio.com</li>
+                    <li><i class="fa-solid fa-shield-halved"></i> Security Desk: Ext. 401</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Siragugal Film Studio Pvt. Ltd. Architected by AG (Chief Software Architect). All rights reserved.</p>
+            <div class="footer-meta">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Security Protocol</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Video Showreel Modal -->
+    <div id="showreel-modal" class="modal">
+        <div class="modal-content modal-lg glass-card">
+            <button class="modal-close" onclick="closeShowreelModal()">&times;</button>
+            <div class="modal-header">
+                <h2><i class="fa-solid fa-clapperboard"></i> Siragugal Film Studio | Official 2026 Showreel</h2>
+            </div>
+            <div class="modal-body">
+                <div class="video-container">
+                    <iframe id="showreel-iframe" src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?autoplay=0" title="Studio Reel" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Drawer / Cart -->
+    <div id="booking-drawer" class="drawer">
+        <div class="drawer-overlay" onclick="closeBookingDrawer()"></div>
+        <div class="drawer-content glass-card">
+            <div class="drawer-header">
+                <h3><i class="fa-solid fa-calendar-check"></i> Reserve Facilities & Gear</h3>
+                <button class="drawer-close" onclick="closeBookingDrawer()">&times;</button>
+            </div>
+
+            <div class="drawer-body">
+                <!-- Date Picker Controls -->
+                <div class="form-group">
+                    <label><i class="fa-solid fa-calendar-day"></i> Production Shoot Start Date</label>
+                    <input type="date" id="booking-start-date" class="form-input">
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-calendar-day"></i> Shoot End Date</label>
+                    <input type="date" id="booking-end-date" class="form-input">
+                </div>
+
+                <hr class="drawer-divider">
+
+                <h4>Selected Items & Facilities</h4>
+                <div id="drawer-items-list" class="drawer-items-list">
+                    <p class="empty-msg">No items added to booking yet. Explore Facilities & Gear section to select stages or camera rigs.</p>
+                </div>
+
+                <div class="drawer-pricing-summary">
+                    <div class="price-row">
+                        <span>Daily Rate Subtotal:</span>
+                        <strong id="drawer-subtotal">$0</strong>
+                    </div>
+                    <div class="price-row">
+                        <span>Duration:</span>
+                        <span id="drawer-days">1 Day</span>
+                    </div>
+                    <div class="price-row">
+                        <span>Insurance & Maintenance (5%):</span>
+                        <span id="drawer-tax">$0</span>
+                    </div>
+                    <div class="price-row total">
+                        <span>Estimated Total:</span>
+                        <strong id="drawer-grand-total" class="gold-gradient">$0</strong>
+                    </div>
+                </div>
+
+                <div class="form-group margin-top">
+                    <label><i class="fa-solid fa-user"></i> Production Company / Director Name</label>
+                    <input type="text" id="booking-client-name" class="form-input" placeholder="e.g. Varma Productions">
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-envelope"></i> Contact Email</label>
+                    <input type="email" id="booking-client-email" class="form-input" placeholder="producer@varmaproductions.com">
+                </div>
+            </div>
+
+            <div class="drawer-footer">
+                <button class="btn btn-gold btn-block btn-lg" onclick="confirmStudioBooking()">
+                    <i class="fa-solid fa-lock"></i> Submit Reservation Request
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Detail Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content modal-md glass-card">
+            <button class="modal-close" onclick="closeProjectModal()">&times;</button>
+            <div id="project-modal-body">
+                <!-- Dynamically Injected -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- JavaScript Files -->
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

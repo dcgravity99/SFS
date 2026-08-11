@@ -1,0 +1,26 @@
+{
+  "name": "siragugal-film-studio-monorepo",
+  "version": "0.1.0-alpha",
+  "private": true,
+  "description": "Siragugal Film Studio - Open-Source AI-Native Desktop Filmmaking Platform",
+  "license": "Apache-2.0 OR MIT",
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "scripts": {
+    "setup:workspace": "node tools/scripts/bootstrap.js",
+    "lint": "eslint . --ext .ts,.tsx,.js --fix",
+    "format": "prettier --write \"**/*.{ts,tsx,js,json,md,yaml}\"",
+    "check:rust": "cargo check --workspace",
+    "test:rust": "cargo test --workspace"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.56.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.3.3"
+  }
+}

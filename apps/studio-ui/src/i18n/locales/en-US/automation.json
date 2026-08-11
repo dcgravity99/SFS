@@ -1,0 +1,6 @@
+{
+  "automation_title": "Local Production Pipeline Automation",
+  "build_pipeline": "Scene Assembly Pipeline",
+  "quality_validation": "Quality Spec Validation (4K/8K & ACEScg)",
+  "master_package": "Film Master Package"
+}

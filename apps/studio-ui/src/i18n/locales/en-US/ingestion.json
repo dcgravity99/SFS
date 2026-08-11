@@ -1,0 +1,6 @@
+{
+  "ingestion_title": "Universal Media Asset Ingestion & Transcoding",
+  "proxy_generation": "Automated 1080p ProRes Proxy Generator",
+  "smpte_timecode": "SMPTE Timecode & EXIF Metadata Extractor",
+  "aces_color": "ACEScg IDT Color Transformation"
+}

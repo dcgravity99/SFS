@@ -1,0 +1,10 @@
+{
+  "render_workspace": "Production Render Workspace",
+  "render_queue": "Batch Render Queue",
+  "progress_monitor": "Frame Progress Monitor",
+  "gpu_usage": "GPU & VRAM Telemetry",
+  "recovery": "Render Failure Recovery",
+  "submit_job": "Submit Render Job",
+  "cancel_job": "Cancel Job",
+  "retry_job": "Retry Failed Job"
+}
