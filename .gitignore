@@ -28,3 +28,5 @@ ehthumbs.db
 # Project Media Artifacts (Local Scratch)
 scratch/
 *.sfsp.tmp
+# Local AI Models (not tracked in GitHub)
+models/llm/*.gguf
