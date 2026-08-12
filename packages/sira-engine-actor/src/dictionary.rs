@@ -18,6 +18,7 @@ impl PhoneticDictionary {
     }
 
     pub fn register(&mut self, word: &str, phonemes: &str) {
-        self.pronunciations.insert(word.to_lowercase(), phonemes.to_string());
+        self.pronunciations
+            .insert(word.to_lowercase(), phonemes.to_string());
     }
 }

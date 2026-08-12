@@ -4,14 +4,14 @@
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
+pub mod checksum;
 pub mod ingest;
 pub mod proxy;
-pub mod checksum;
 pub mod transcode;
 
+pub use checksum::*;
 pub use ingest::*;
 pub use proxy::*;
-pub use checksum::*;
 pub use transcode::*;
 
 use sira_types::SiraResult;

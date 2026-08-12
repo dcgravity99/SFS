@@ -1,8 +1,10 @@
-/* ============================================================================
- * Siragugal Film Studio
- * Copyright (C) 2026 Siragugal Film Studio Contributors
- * Licensed under Apache-2.0 or MIT.
- * ============================================================================ */
+/*
+============================================================================
+Siragugal Film Studio
+Copyright (C) 2026 Siragugal Film Studio Contributors
+Licensed under Apache-2.0 or MIT.
+============================================================================
+*/
 
 use sira_types::SiraResult;
 use std::sync::RwLock;
@@ -29,12 +31,24 @@ impl UniversalUndoRedo {
     }
 
     pub fn execute_command(&self, mut command: Box<dyn ExperienceCommand>) -> SiraResult<()> {
-        command.execute()?;
+        match command.execute() {
+            SiraResult::Error(err) => {
+                return SiraResult::Error(err);
+            }
+
+            SiraResult::Cancelled { reason } => {
+                return SiraResult::Cancelled { reason };
+            }
+
+            _ => {}
+        }
+
         if let Ok(mut count) = self.undo_stack_size.write() {
             if *count < self.max_history_limit {
                 *count += 1;
             }
         }
+
         SiraResult::Success(())
     }
 

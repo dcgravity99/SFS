@@ -4,8 +4,8 @@
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
-use std::path::{Path, PathBuf};
 use sira_types::SiraResult;
+use std::path::{Path, PathBuf};
 
 pub struct DiskCacheTier {
     pub cache_dir: PathBuf,

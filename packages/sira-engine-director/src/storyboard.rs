@@ -4,8 +4,8 @@
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
-use serde::{Deserialize, Serialize};
 use crate::shot_plan::ShotPlan;
+use serde::{Deserialize, Serialize};
 use sira_types::SiraResult;
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -26,7 +26,10 @@ impl StoryboardGenerator {
                 frame_id: format!("frame-{}", shot.shot_id),
                 shot_id: shot.shot_id.clone(),
                 frame_index: idx + 1,
-                framing_summary: format!("{} shot - {}", shot.shot_type, shot.key_action_description),
+                framing_summary: format!(
+                    "{} shot - {}",
+                    shot.shot_type, shot.key_action_description
+                ),
             });
         }
         SiraResult::Success(frames)

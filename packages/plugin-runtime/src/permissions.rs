@@ -9,7 +9,10 @@ use sira_types::{SiraError, SiraErrorCode, SiraResult};
 pub struct PluginPermissionValidator;
 
 impl PluginPermissionValidator {
-    pub fn verify_permission(granted_permissions: &[String], required_permission: &str) -> SiraResult<()> {
+    pub fn verify_permission(
+        granted_permissions: &[String],
+        required_permission: &str,
+    ) -> SiraResult<()> {
         if granted_permissions.iter().any(|p| p == required_permission) {
             SiraResult::Success(())
         } else {

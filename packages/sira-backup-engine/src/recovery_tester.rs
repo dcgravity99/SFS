@@ -8,17 +8,17 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct RecoveryTestResult {
-  pub test_id: String,
-  pub rto_seconds: u64,
-  pub rpo_seconds: u64,
-  pub is_success: bool,
+    pub test_id: String,
+    pub rto_seconds: u64,
+    pub rpo_seconds: u64,
+    pub is_success: bool,
 }
 
 pub fn run_disaster_recovery_test() -> RecoveryTestResult {
-  RecoveryTestResult {
-    test_id: "dr-sim-001".to_string(),
-    rto_seconds: 15,
-    rpo_seconds: 0,
-    is_success: true,
-  }
+    RecoveryTestResult {
+        test_id: "dr-sim-001".to_string(),
+        rto_seconds: 15,
+        rpo_seconds: 0,
+        is_success: true,
+    }
 }

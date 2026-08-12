@@ -4,8 +4,8 @@
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
-use serde::{Deserialize, Serialize};
 use crate::fountain::ScriptScene;
+use serde::{Deserialize, Serialize};
 use sira_types::SiraResult;
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -36,13 +36,15 @@ impl BeatSheetGenerator {
                     beat_id: "beat-2".to_string(),
                     beat_type: "Catalyst".to_string(),
                     scene_ids: vec![2],
-                    description: "Inciting incident disrupting the protagonist's status quo.".to_string(),
+                    description: "Inciting incident disrupting the protagonist's status quo."
+                        .to_string(),
                 });
                 beats.push(StoryBeat {
                     beat_id: "beat-3".to_string(),
                     beat_type: "Climax".to_string(),
                     scene_ids: vec![total_scenes],
-                    description: "Final narrative confrontation and conflict resolution.".to_string(),
+                    description: "Final narrative confrontation and conflict resolution."
+                        .to_string(),
                 });
             }
         }

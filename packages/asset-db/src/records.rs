@@ -4,9 +4,9 @@
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
+use crate::lifecycle::AssetLifecycleStatus;
 use serde::{Deserialize, Serialize};
 use sira_types::ids::AssetId;
-use crate::lifecycle::AssetLifecycleStatus;
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct UniversalAssetRecord {

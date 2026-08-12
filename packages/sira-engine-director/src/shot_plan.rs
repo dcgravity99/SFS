@@ -11,8 +11,8 @@ use sira_types::SiraResult;
 pub struct ShotPlan {
     pub shot_id: String,
     pub scene_id: usize,
-    pub shot_type: String,     // Wide, Medium, CloseUp, OTS
-    pub camera_angle: String,  // EyeLevel, HighAngle, LowAngle, Dutch
+    pub shot_type: String,    // Wide, Medium, CloseUp, OTS
+    pub camera_angle: String, // EyeLevel, HighAngle, LowAngle, Dutch
     pub lens_focal_length_mm: f32,
     pub duration_seconds: f32,
     pub key_action_description: String,

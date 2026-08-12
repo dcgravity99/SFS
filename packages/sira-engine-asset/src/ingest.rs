@@ -1,8 +1,12 @@
-/* ============================================================================
- * Siragugal Film Studio
- * Copyright (C) 2026 Siragugal Film Studio Contributors
- * Licensed under Apache-2.0 or MIT.
- * ============================================================================ */
+/*
+============================================================================
+
+Siragugal Film Studio
+Copyright (C) 2026 Siragugal Film Studio Contributors
+Licensed under Apache-2.0 or MIT.
+
+============================================================================
+*/
 
 use crate::checksum::ChecksumVerifier;
 use crate::proxy::ProxyVideoGenerator;
@@ -29,10 +33,21 @@ pub struct MediaIngestCoordinator;
 impl MediaIngestCoordinator {
     pub fn ingest(spec: IngestJobSpec) -> SiraResult<IngestResult> {
         let asset_id = format!("ast-{}", spec.source_path.replace(['/', '\\', '.'], "_"));
+
         let checksum = ChecksumVerifier::compute_sha256(spec.source_path.as_bytes());
 
         let proxy_path = if spec.create_proxy {
-            ProxyVideoGenerator::generate_proxy(&asset_id, "720p").ok()
+            match ProxyVideoGenerator::generate_proxy(&asset_id, "720p") {
+                SiraResult::Success(path) => Some(path),
+
+                SiraResult::PartialSuccess { data, .. } => Some(data),
+
+                SiraResult::Error(_) => None,
+
+                SiraResult::Progress { .. } => None,
+
+                SiraResult::Cancelled { .. } => None,
+            }
         } else {
             None
         };

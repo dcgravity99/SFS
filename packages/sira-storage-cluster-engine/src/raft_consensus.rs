@@ -5,6 +5,6 @@
  * ============================================================================ */
 
 pub fn execute_leader_election() -> Result<String, String> {
-  // Raft Consensus Leader Election
-  Ok("node-leader-01".to_string())
+    // Raft Consensus Leader Election
+    Ok("node-leader-01".to_string())
 }

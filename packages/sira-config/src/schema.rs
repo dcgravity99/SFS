@@ -8,8 +8,8 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Debug, PartialEq, Eq, Serialize, Deserialize)]
 pub enum SettingCategory {
-    Static,   // Requires application restart
-    Dynamic,  // Hot-reloadable at runtime
+    Static,  // Requires application restart
+    Dynamic, // Hot-reloadable at runtime
 }
 
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]

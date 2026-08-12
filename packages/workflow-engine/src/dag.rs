@@ -4,17 +4,20 @@
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
-use std::collections::HashMap;
-use petgraph::graph::DiGraph;
-use petgraph::algo::toposort;
-use sira_types::{SiraError, SiraErrorCode, SiraResult};
-use crate::node::WorkflowNode;
 use crate::edge::WorkflowEdge;
+use crate::node::WorkflowNode;
+use petgraph::algo::toposort;
+use petgraph::graph::DiGraph;
+use sira_types::{SiraError, SiraErrorCode, SiraResult};
+use std::collections::HashMap;
 
 pub struct DagValidator;
 
 impl DagValidator {
-    pub fn validate_and_toposort(nodes: &[WorkflowNode], edges: &[WorkflowEdge]) -> SiraResult<Vec<String>> {
+    pub fn validate_and_toposort(
+        nodes: &[WorkflowNode],
+        edges: &[WorkflowEdge],
+    ) -> SiraResult<Vec<String>> {
         let mut graph = DiGraph::<String, ()>::new();
         let mut node_map = HashMap::new();
 
@@ -24,7 +27,10 @@ impl DagValidator {
         }
 
         for e in edges {
-            if let (Some(&src), Some(&tgt)) = (node_map.get(&e.source_node_id), node_map.get(&e.target_node_id)) {
+            if let (Some(&src), Some(&tgt)) = (
+                node_map.get(&e.source_node_id),
+                node_map.get(&e.target_node_id),
+            ) {
                 graph.add_edge(src, tgt, ());
             }
         }

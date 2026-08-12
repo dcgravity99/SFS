@@ -9,7 +9,11 @@ use sira_types::SiraResult;
 pub struct SubEngineHostApiDispatcher;
 
 impl SubEngineHostApiDispatcher {
-    pub fn dispatch_host_api(api_group: &str, method_name: &str, payload_json: &str) -> SiraResult<String> {
+    pub fn dispatch_host_api(
+        api_group: &str,
+        method_name: &str,
+        payload_json: &str,
+    ) -> SiraResult<String> {
         let _ = api_group;
         let _ = method_name;
         let _ = payload_json;

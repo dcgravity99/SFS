@@ -4,18 +4,18 @@
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
-pub mod schema;
-pub mod type_registry;
-pub mod records;
+pub mod events;
 pub mod lifecycle;
 pub mod query;
+pub mod records;
 pub mod relationships;
-pub mod events;
+pub mod schema;
+pub mod type_registry;
 
-pub use schema::*;
-pub use type_registry::*;
-pub use records::*;
+pub use events::*;
 pub use lifecycle::*;
 pub use query::*;
+pub use records::*;
 pub use relationships::*;
-pub use events::*;
+pub use schema::*;
+pub use type_registry::*;

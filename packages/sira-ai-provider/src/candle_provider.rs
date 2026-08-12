@@ -4,15 +4,15 @@
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
-use std::path::{Path, PathBuf};
 use async_trait::async_trait;
-use sira_types::{SiraError, SiraErrorCode, SiraResult};
 use sira_core::capabilities::AICapability;
+use sira_types::{SiraError, SiraErrorCode, SiraResult};
+use std::path::{Path, PathBuf};
 
-use crate::manifest::{ProviderManifest, AIModelInfo};
 use crate::contracts::{AIRequest, AIResponse, AIUsage};
-use crate::provider_trait::AiProvider;
+use crate::manifest::{AIModelInfo, ProviderManifest};
 use crate::model_registry::ModelRegistry;
+use crate::provider_trait::AiProvider;
 
 pub struct CandleLlmProvider {
     model_id: String,
@@ -92,50 +92,56 @@ impl AiProvider for CandleLlmProvider {
     async fn execute(&self, request: AIRequest) -> SiraResult<AIResponse> {
         // 1. Validate weights prior to execution
         match self.verify_weights() {
-            SiraResult::Success(true) => {},
+            SiraResult::Success(true) => {}
             SiraResult::Error(err) => return SiraResult::Error(err),
-            _ => return SiraResult::Error(SiraError {
-                code: SiraErrorCode::ModelNotFound,
-                error_name: "MODEL_NOT_FOUND".to_string(),
-                category: "AI_PROVIDER".to_string(),
-                severity: "ERROR".to_string(),
-                is_recoverable: false,
-                correlation_id: None,
-                job_id: None,
-                i18n_key: "errors.model.not_found".to_string(),
-                suggested_action_key: None,
-            }),
+            _ => {
+                return SiraResult::Error(SiraError {
+                    code: SiraErrorCode::ModelNotFound,
+                    error_name: "MODEL_NOT_FOUND".to_string(),
+                    category: "AI_PROVIDER".to_string(),
+                    severity: "ERROR".to_string(),
+                    is_recoverable: false,
+                    correlation_id: None,
+                    job_id: None,
+                    i18n_key: "errors.model.not_found".to_string(),
+                    suggested_action_key: None,
+                })
+            }
         }
 
         // 2. Load GGUF file & device setup
         let mut file = match std::fs::File::open(&self.model_path) {
             Ok(f) => f,
-            Err(e) => return SiraResult::Error(SiraError {
-                code: SiraErrorCode::ModelUnreadable,
-                error_name: "MODEL_UNREADABLE".to_string(),
-                category: "AI_PROVIDER".to_string(),
-                severity: "ERROR".to_string(),
-                is_recoverable: false,
-                correlation_id: None,
-                job_id: None,
-                i18n_key: format!("errors.model.unreadable: {}", e),
-                suggested_action_key: None,
-            }),
+            Err(e) => {
+                return SiraResult::Error(SiraError {
+                    code: SiraErrorCode::ModelUnreadable,
+                    error_name: "MODEL_UNREADABLE".to_string(),
+                    category: "AI_PROVIDER".to_string(),
+                    severity: "ERROR".to_string(),
+                    is_recoverable: false,
+                    correlation_id: None,
+                    job_id: None,
+                    i18n_key: format!("errors.model.unreadable: {}", e),
+                    suggested_action_key: None,
+                })
+            }
         };
 
         let content = match candle_core::quantized::gguf_file::Content::read(&mut file) {
             Ok(c) => c,
-            Err(e) => return SiraResult::Error(SiraError {
-                code: SiraErrorCode::InvalidModelFormat,
-                error_name: "INVALID_MODEL_FORMAT".to_string(),
-                category: "AI_PROVIDER".to_string(),
-                severity: "ERROR".to_string(),
-                is_recoverable: false,
-                correlation_id: None,
-                job_id: None,
-                i18n_key: format!("errors.model.invalid_format: {}", e),
-                suggested_action_key: None,
-            }),
+            Err(e) => {
+                return SiraResult::Error(SiraError {
+                    code: SiraErrorCode::InvalidModelFormat,
+                    error_name: "INVALID_MODEL_FORMAT".to_string(),
+                    category: "AI_PROVIDER".to_string(),
+                    severity: "ERROR".to_string(),
+                    is_recoverable: false,
+                    correlation_id: None,
+                    job_id: None,
+                    i18n_key: format!("errors.model.invalid_format: {}", e),
+                    suggested_action_key: None,
+                })
+            }
         };
 
         // Select Device: Metal on macOS, CPU on Windows baseline
@@ -144,60 +150,73 @@ impl AiProvider for CandleLlmProvider {
         #[cfg(not(target_os = "macos"))]
         let device = candle_core::Device::Cpu;
 
-        let mut model = match candle_transformers::models::quantized_llama::ModelWeights::from_gguf(content, &mut file, &device) {
+        let mut model = match candle_transformers::models::quantized_llama::ModelWeights::from_gguf(
+            content, &mut file, &device,
+        ) {
             Ok(m) => m,
-            Err(e) => return SiraResult::Error(SiraError {
-                code: SiraErrorCode::ModelInitializationFailed,
-                error_name: "MODEL_INIT_FAILED".to_string(),
-                category: "AI_PROVIDER".to_string(),
-                severity: "ERROR".to_string(),
-                is_recoverable: false,
-                correlation_id: None,
-                job_id: None,
-                i18n_key: format!("errors.model.init_failed: {}", e),
-                suggested_action_key: None,
-            }),
+            Err(e) => {
+                return SiraResult::Error(SiraError {
+                    code: SiraErrorCode::ModelInitializationFailed,
+                    error_name: "MODEL_INIT_FAILED".to_string(),
+                    category: "AI_PROVIDER".to_string(),
+                    severity: "ERROR".to_string(),
+                    is_recoverable: false,
+                    correlation_id: None,
+                    job_id: None,
+                    i18n_key: format!("errors.model.init_failed: {}", e),
+                    suggested_action_key: None,
+                })
+            }
         };
 
         // 3. Load Tokenizer & Execute Auto-Regressive Forward Generation Loop
         let tokenizer_path = self.model_path.with_file_name("tokenizer.json");
         let tokenizer = match tokenizers::Tokenizer::from_file(&tokenizer_path) {
             Ok(t) => t,
-            Err(e) => return SiraResult::Error(SiraError {
-                code: SiraErrorCode::InvalidModelFormat,
-                error_name: "TOKENIZER_NOT_FOUND".to_string(),
-                category: "AI_PROVIDER".to_string(),
-                severity: "ERROR".to_string(),
-                is_recoverable: false,
-                correlation_id: None,
-                job_id: None,
-                i18n_key: format!("errors.tokenizer.missing: {}", e),
-                suggested_action_key: None,
-            }),
+            Err(e) => {
+                return SiraResult::Error(SiraError {
+                    code: SiraErrorCode::InvalidModelFormat,
+                    error_name: "TOKENIZER_NOT_FOUND".to_string(),
+                    category: "AI_PROVIDER".to_string(),
+                    severity: "ERROR".to_string(),
+                    is_recoverable: false,
+                    correlation_id: None,
+                    job_id: None,
+                    i18n_key: format!("errors.tokenizer.missing: {}", e),
+                    suggested_action_key: None,
+                })
+            }
         };
 
         let tokens = match tokenizer.encode(request.prompt.as_str(), true) {
             Ok(t) => t.get_ids().to_vec(),
-            Err(e) => return SiraResult::Error(SiraError {
-                code: SiraErrorCode::InvalidModelFormat,
-                error_name: "TOKENIZATION_FAILED".to_string(),
-                category: "AI_PROVIDER".to_string(),
-                severity: "ERROR".to_string(),
-                is_recoverable: false,
-                correlation_id: None,
-                job_id: None,
-                i18n_key: format!("errors.tokenization.failed: {}", e),
-                suggested_action_key: None,
-            }),
+            Err(e) => {
+                return SiraResult::Error(SiraError {
+                    code: SiraErrorCode::InvalidModelFormat,
+                    error_name: "TOKENIZATION_FAILED".to_string(),
+                    category: "AI_PROVIDER".to_string(),
+                    severity: "ERROR".to_string(),
+                    is_recoverable: false,
+                    correlation_id: None,
+                    job_id: None,
+                    i18n_key: format!("errors.tokenization.failed: {}", e),
+                    suggested_action_key: None,
+                })
+            }
         };
 
-        let mut logits_processor = candle_transformers::generation::LogitsProcessor::new(1337, Some(0.7), Some(0.9));
+        let mut logits_processor =
+            candle_transformers::generation::LogitsProcessor::new(1337, Some(0.7), Some(0.9));
         let mut generated_tokens: Vec<u32> = Vec::new();
         let mut all_tokens = tokens.clone();
         let max_tokens = 64;
 
         for index in 0..max_tokens {
-            let context = if index == 0 { &all_tokens[..] } else { &[all_tokens[all_tokens.len() - 1]] };
+            let context = if index == 0 {
+                &all_tokens[..]
+            } else {
+                &[all_tokens[all_tokens.len() - 1]]
+            };
             let input = match candle_core::Tensor::new(context, &device) {
                 Ok(t) => match t.unsqueeze(0) {
                     Ok(u) => u,
@@ -227,7 +246,8 @@ impl AiProvider for CandleLlmProvider {
             generated_tokens.push(next_token);
             all_tokens.push(next_token);
 
-            if next_token == 2 || next_token == 128001 || next_token == 128009 { // EOS tokens
+            if next_token == 2 || next_token == 128001 || next_token == 128009 {
+                // EOS tokens
                 break;
             }
         }
@@ -267,7 +287,10 @@ mod tests {
         let manifest = provider.manifest();
         assert_eq!(manifest.provider_id, "provider-candle-local-llm");
         assert!(manifest.is_offline_capable);
-        assert_eq!(manifest.supported_capabilities, vec![AICapability::TextGeneration]);
+        assert_eq!(
+            manifest.supported_capabilities,
+            vec![AICapability::TextGeneration]
+        );
     }
 
     #[test]
@@ -279,7 +302,7 @@ mod tests {
         match provider.verify_weights() {
             SiraResult::Error(err) => {
                 assert_eq!(err.code, SiraErrorCode::ModelNotFound);
-            },
+            }
             _ => panic!("Expected ModelNotFound error for missing model path"),
         }
     }
@@ -288,14 +311,18 @@ mod tests {
     async fn test_real_gguf_inference() {
         let model_path = PathBuf::from("models/llm/llama-3.2-3b-instruct.gguf");
         if !model_path.exists() {
-            println!("GGUF model file not found at {:?}, skipping real inference test.", model_path);
+            println!(
+                "GGUF model file not found at {:?}, skipping real inference test.",
+                model_path
+            );
             return;
         }
 
         let provider = CandleLlmProvider::new(model_path, None);
         let request = AIRequest {
             request_id: "real-inference-proof-001".to_string(),
-            prompt: "Write one short sentence describing a peaceful sunrise over a Tamil village.".to_string(),
+            prompt: "Write one short sentence describing a peaceful sunrise over a Tamil village."
+                .to_string(),
             media_url: None,
             options: std::collections::HashMap::new(),
         };
@@ -310,14 +337,16 @@ mod tests {
                 println!("Time Elapsed: {:?}", elapsed);
                 println!("Prompt Tokens: {}", resp.usage.prompt_tokens);
                 println!("Completion Tokens: {}", resp.usage.completion_tokens);
-                println!("Generated Text:\n{}", resp.output_text.as_deref().unwrap_or(""));
+                println!(
+                    "Generated Text:\n{}",
+                    resp.output_text.as_deref().unwrap_or("")
+                );
                 assert!(resp.output_text.is_some());
                 assert!(resp.usage.completion_tokens > 0);
-            },
+            }
             SiraResult::Error(err) => {
                 panic!("Real GGUF inference failed: {:?}", err);
             }
         }
     }
 }
-

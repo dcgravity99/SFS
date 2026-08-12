@@ -4,7 +4,7 @@
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
-use sha2::{Sha256, Digest};
+use sha2::{Digest, Sha256};
 
 pub fn compute_cache_key(namespace: &str, inputs_json: &str) -> String {
     let mut hasher = Sha256::new();

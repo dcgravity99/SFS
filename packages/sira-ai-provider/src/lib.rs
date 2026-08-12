@@ -4,25 +4,24 @@
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
-pub mod manifest;
+pub mod benchmark;
+pub mod candle_provider;
 pub mod contracts;
-pub mod provider_trait;
-pub mod provider_registry;
+pub mod manifest;
+pub mod mock_provider;
 pub mod model_registry;
+pub mod provider_registry;
+pub mod provider_trait;
 pub mod router;
 pub mod security;
-pub mod benchmark;
-pub mod mock_provider;
-pub mod candle_provider;
 
-pub use manifest::*;
+pub use benchmark::*;
+pub use candle_provider::*;
 pub use contracts::*;
-pub use provider_trait::*;
-pub use provider_registry::*;
+pub use manifest::*;
+pub use mock_provider::*;
 pub use model_registry::*;
+pub use provider_registry::*;
+pub use provider_trait::*;
 pub use router::*;
 pub use security::*;
-pub use benchmark::*;
-pub use mock_provider::*;
-pub use candle_provider::*;
-

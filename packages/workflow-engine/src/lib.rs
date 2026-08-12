@@ -4,24 +4,24 @@
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
-pub mod contract;
-pub mod types;
-pub mod node;
-pub mod edge;
-pub mod dag;
-pub mod scheduler;
-pub mod checkpoint;
 pub mod cache;
-pub mod sfsw;
+pub mod checkpoint;
+pub mod contract;
+pub mod dag;
+pub mod edge;
 pub mod executor;
+pub mod node;
+pub mod scheduler;
+pub mod sfsw;
+pub mod types;
 
-pub use contract::*;
-pub use types::*;
-pub use node::*;
-pub use edge::*;
-pub use dag::*;
-pub use scheduler::*;
-pub use checkpoint::*;
 pub use cache::*;
-pub use sfsw::*;
+pub use checkpoint::*;
+pub use contract::*;
+pub use dag::*;
+pub use edge::*;
 pub use executor::*;
+pub use node::*;
+pub use scheduler::*;
+pub use sfsw::*;
+pub use types::*;

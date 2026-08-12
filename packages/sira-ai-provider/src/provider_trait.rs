@@ -4,10 +4,10 @@
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
+use crate::contracts::{AIRequest, AIResponse};
+use crate::manifest::ProviderManifest;
 use async_trait::async_trait;
 use sira_types::SiraResult;
-use crate::manifest::ProviderManifest;
-use crate::contracts::{AIRequest, AIResponse};
 
 #[async_trait]
 pub trait AiProvider: Send + Sync {

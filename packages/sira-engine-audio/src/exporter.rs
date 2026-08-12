@@ -20,7 +20,10 @@ pub struct TimelineAudioExport {
 pub struct TimelineAudioExporter;
 
 impl TimelineAudioExporter {
-    pub fn export_for_timeline(tracks: Vec<AudioTrack>, segments: Vec<DialogueSegment>) -> SiraResult<String> {
+    pub fn export_for_timeline(
+        tracks: Vec<AudioTrack>,
+        segments: Vec<DialogueSegment>,
+    ) -> SiraResult<String> {
         let export = TimelineAudioExport {
             export_version: "1.0.0".to_string(),
             master_lufs_target: -24.0,

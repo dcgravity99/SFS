@@ -8,17 +8,17 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct LocalNotification {
-  pub notification_id: String,
-  pub title: String,
-  pub message: String,
-  pub is_dispatched: bool,
+    pub notification_id: String,
+    pub title: String,
+    pub message: String,
+    pub is_dispatched: bool,
 }
 
 pub fn send_local_notification(title: &str, message: &str) -> LocalNotification {
-  LocalNotification {
-    notification_id: "notif-local-057".to_string(),
-    title: title.to_string(),
-    message: message.to_string(),
-    is_dispatched: true,
-  }
+    LocalNotification {
+        notification_id: "notif-local-057".to_string(),
+        title: title.to_string(),
+        message: message.to_string(),
+        is_dispatched: true,
+    }
 }

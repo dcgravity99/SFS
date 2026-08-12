@@ -4,26 +4,26 @@
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
-pub mod sdk;
-pub mod manifest;
-pub mod lifecycle;
 pub mod capabilities;
+pub mod dependencies;
+pub mod event_bus;
+pub mod host_apis;
+pub mod lifecycle;
+pub mod manifest;
 pub mod permissions;
 pub mod quotas;
-pub mod dependencies;
-pub mod signing;
-pub mod host_apis;
-pub mod event_bus;
 pub mod sandbox;
+pub mod sdk;
+pub mod signing;
 
-pub use sdk::*;
-pub use manifest::*;
-pub use lifecycle::*;
 pub use capabilities::*;
+pub use dependencies::*;
+pub use event_bus::*;
+pub use host_apis::*;
+pub use lifecycle::*;
+pub use manifest::*;
 pub use permissions::*;
 pub use quotas::*;
-pub use dependencies::*;
-pub use signing::*;
-pub use host_apis::*;
-pub use event_bus::*;
 pub use sandbox::*;
+pub use sdk::*;
+pub use signing::*;

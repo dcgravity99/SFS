@@ -4,20 +4,20 @@
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
-pub mod capabilities;
-pub mod job;
-pub mod scheduler;
-pub mod checkpoint;
 pub mod cancellation;
+pub mod capabilities;
+pub mod checkpoint;
 pub mod event_bus;
+pub mod job;
 pub mod manager;
+pub mod scheduler;
 pub mod telemetry;
 
-pub use capabilities::*;
-pub use job::*;
-pub use scheduler::*;
-pub use checkpoint::*;
 pub use cancellation::*;
+pub use capabilities::*;
+pub use checkpoint::*;
 pub use event_bus::*;
+pub use job::*;
 pub use manager::*;
+pub use scheduler::*;
 pub use telemetry::*;

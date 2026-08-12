@@ -4,9 +4,9 @@
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
-use std::path::Path;
-use sha2::{Sha256, Digest};
+use sha2::{Digest, Sha256};
 use sira_types::SiraResult;
+use std::path::Path;
 
 pub fn compute_sha256(file_path: &Path) -> SiraResult<String> {
     if !file_path.exists() {

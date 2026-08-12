@@ -5,6 +5,6 @@
  * ============================================================================ */
 
 pub fn clear_model_cache() -> Result<bool, String> {
-  // Local AI Model Cache Manager: Evict LRU model weights from disk cache
-  Ok(true)
+    // Local AI Model Cache Manager: Evict LRU model weights from disk cache
+    Ok(true)
 }

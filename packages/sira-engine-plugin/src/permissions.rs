@@ -9,7 +9,11 @@ use sira_types::SiraResult;
 pub struct TenTierPermissionChecker;
 
 impl TenTierPermissionChecker {
-    pub fn verify_permission(plugin_id: &str, granted_permissions: &[String], required_permission: &str) -> SiraResult<bool> {
+    pub fn verify_permission(
+        plugin_id: &str,
+        granted_permissions: &[String],
+        required_permission: &str,
+    ) -> SiraResult<bool> {
         if granted_permissions.iter().any(|p| p == required_permission) {
             SiraResult::Success(true)
         } else {

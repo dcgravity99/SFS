@@ -8,12 +8,32 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub enum SiraCoreEvent {
-    JobStarted { job_id: String },
-    JobProgress { job_id: String, progress: f32 },
-    JobCompleted { job_id: String },
-    JobFailed { job_id: String, error_msg: String },
-    EngineStarted { engine_name: String },
-    EngineStopped { engine_name: String },
-    ResourceAllocated { job_id: String, vram_mb: usize },
-    ProviderChanged { capability: String, new_provider: String },
+    JobStarted {
+        job_id: String,
+    },
+    JobProgress {
+        job_id: String,
+        progress: f32,
+    },
+    JobCompleted {
+        job_id: String,
+    },
+    JobFailed {
+        job_id: String,
+        error_msg: String,
+    },
+    EngineStarted {
+        engine_name: String,
+    },
+    EngineStopped {
+        engine_name: String,
+    },
+    ResourceAllocated {
+        job_id: String,
+        vram_mb: usize,
+    },
+    ProviderChanged {
+        capability: String,
+        new_provider: String,
+    },
 }

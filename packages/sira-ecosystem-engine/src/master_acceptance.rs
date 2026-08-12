@@ -5,6 +5,6 @@
  * ============================================================================ */
 
 pub fn evaluate_master_acceptance() -> Result<bool, String> {
-  // Master Acceptance Decision Engine: All 60 Modules PASSED
-  Ok(true)
+    // Master Acceptance Decision Engine: All 60 Modules PASSED
+    Ok(true)
 }

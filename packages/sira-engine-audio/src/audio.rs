@@ -12,7 +12,7 @@ pub struct AudioTrack {
     pub track_name: String,
     pub track_type: String, // Dialogue, Music, Foley, Ambient
     pub sample_rate_hz: u32,
-    pub channels: u16,     // 1=Mono, 2=Stereo, 6=5.1, 8=7.1
+    pub channels: u16, // 1=Mono, 2=Stereo, 6=5.1, 8=7.1
     pub volume_db: f32,
     pub is_muted: bool,
     pub is_solo: bool,

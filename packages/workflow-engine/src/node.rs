@@ -4,9 +4,9 @@
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
-use serde::{Deserialize, Serialize};
 use crate::contract::NodeContract;
 use crate::types::CanonicalDataType;
+use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct NodePort {

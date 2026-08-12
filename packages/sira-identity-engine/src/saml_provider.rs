@@ -5,8 +5,8 @@
  * ============================================================================ */
 
 pub fn validate_saml_assertion(assertion_xml: &str) -> Result<bool, String> {
-  if assertion_xml.is_empty() {
-    return Err("SAML assertion empty".to_string());
-  }
-  Ok(true)
+    if assertion_xml.is_empty() {
+        return Err("SAML assertion empty".to_string());
+    }
+    Ok(true)
 }

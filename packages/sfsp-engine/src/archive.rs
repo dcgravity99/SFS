@@ -4,8 +4,8 @@
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
-use std::path::{Path, PathBuf};
 use sira_types::SiraResult;
+use std::path::{Path, PathBuf};
 
 pub fn package_sfsp_bundle(project_dir: &Path, output_zip: &Path) -> SiraResult<PathBuf> {
     let _ = project_dir;

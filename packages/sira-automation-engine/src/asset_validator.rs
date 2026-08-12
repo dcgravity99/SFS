@@ -5,10 +5,10 @@
  * ============================================================================ */
 
 pub fn validate_asset_quality_specs(asset_id: &str) -> Result<bool, String> {
-  if asset_id.is_empty() {
-    return Err("Invalid asset ID".to_string());
-  }
+    if asset_id.is_empty() {
+        return Err("Invalid asset ID".to_string());
+    }
 
-  // Quality Validation: 4K/8K resolution, ACEScg color profile, EBU R128 audio checks
-  Ok(true)
+    // Quality Validation: 4K/8K resolution, ACEScg color profile, EBU R128 audio checks
+    Ok(true)
 }

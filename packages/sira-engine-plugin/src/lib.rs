@@ -5,14 +5,14 @@
  * ============================================================================ */
 
 pub mod host;
-pub mod permissions;
 pub mod host_apis;
 pub mod lifecycle;
+pub mod permissions;
 
 pub use host::*;
-pub use permissions::*;
 pub use host_apis::*;
 pub use lifecycle::*;
+pub use permissions::*;
 
 use sira_types::SiraResult;
 
@@ -27,7 +27,12 @@ impl ExtensionEngine {
         WasmtimeHostManager::load(manifest)
     }
 
-    pub fn execute_plugin_hook(&self, plugin_id: &str, hook_name: &str, input_json: &str) -> SiraResult<PluginExecutionResult> {
+    pub fn execute_plugin_hook(
+        &self,
+        plugin_id: &str,
+        hook_name: &str,
+        input_json: &str,
+    ) -> SiraResult<PluginExecutionResult> {
         WasmtimeHostManager::execute_hook(plugin_id, hook_name, input_json)
     }
 

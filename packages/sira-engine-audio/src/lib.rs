@@ -5,21 +5,20 @@
  * ============================================================================ */
 
 pub mod audio;
-pub mod voice;
-pub mod music;
-pub mod mixer;
-pub mod spatial;
 pub mod exporter;
+pub mod mixer;
 pub mod multitrack_mixer;
+pub mod music;
+pub mod spatial;
+pub mod voice;
 
 pub use audio::*;
-pub use voice::*;
-pub use music::*;
-pub use mixer::*;
-pub use spatial::*;
 pub use exporter::*;
+pub use mixer::*;
 pub use multitrack_mixer::*;
-
+pub use music::*;
+pub use spatial::*;
+pub use voice::*;
 
 pub struct AudioEngine;
 

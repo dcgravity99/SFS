@@ -5,8 +5,8 @@
  * ============================================================================ */
 
 pub fn restore_project_checkpoint(snapshot_id: &str) -> Result<bool, String> {
-  if snapshot_id.is_empty() {
-    return Err("Invalid snapshot ID".to_string());
-  }
-  Ok(true)
+    if snapshot_id.is_empty() {
+        return Err("Invalid snapshot ID".to_string());
+    }
+    Ok(true)
 }

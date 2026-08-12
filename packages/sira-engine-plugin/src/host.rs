@@ -31,7 +31,11 @@ impl WasmtimeHostManager {
         SiraResult::Success(id)
     }
 
-    pub fn execute_hook(plugin_id: &str, hook_name: &str, input_json: &str) -> SiraResult<PluginExecutionResult> {
+    pub fn execute_hook(
+        plugin_id: &str,
+        hook_name: &str,
+        input_json: &str,
+    ) -> SiraResult<PluginExecutionResult> {
         let _ = hook_name;
         let _ = input_json;
         SiraResult::Success(PluginExecutionResult {

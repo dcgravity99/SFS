@@ -4,8 +4,8 @@
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
-use std::path::Path;
 use sira_types::{SiraError, SiraErrorCode, SiraResult};
+use std::path::Path;
 
 pub fn check_and_migrate_sfsp(project_dir: &Path) -> SiraResult<()> {
     let _ = project_dir;

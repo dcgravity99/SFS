@@ -5,8 +5,8 @@
  * ============================================================================ */
 
 pub fn validate_api_contract(payload_json: &str) -> Result<bool, String> {
-  if payload_json.is_empty() {
-    return Err("Empty IPC/API payload".to_string());
-  }
-  Ok(true)
+    if payload_json.is_empty() {
+        return Err("Empty IPC/API payload".to_string());
+    }
+    Ok(true)
 }

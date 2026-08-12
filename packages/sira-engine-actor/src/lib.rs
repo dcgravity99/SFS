@@ -5,16 +5,16 @@
  * ============================================================================ */
 
 pub mod actor;
-pub mod voice;
-pub mod lipsync;
-pub mod dictionary;
 pub mod consistency;
+pub mod dictionary;
+pub mod lipsync;
+pub mod voice;
 
 pub use actor::*;
-pub use voice::*;
-pub use lipsync::*;
-pub use dictionary::*;
 pub use consistency::*;
+pub use dictionary::*;
+pub use lipsync::*;
+pub use voice::*;
 
 pub struct ActorEngine;
 

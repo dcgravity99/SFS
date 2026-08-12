@@ -19,8 +19,8 @@ pub struct ColorGradeParams {
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct AcesTransformSpec {
-    pub input_space: String,  // "sRGB", "Rec709", "Linear"
-    pub working_space: String, // "ACEScg"
+    pub input_space: String,      // "sRGB", "Rec709", "Linear"
+    pub working_space: String,    // "ACEScg"
     pub output_transform: String, // "Rec709_SDR", "P3_D65_HDR"
     pub params: ColorGradeParams,
 }
@@ -59,6 +59,9 @@ mod tests {
         let suite = ColorSuiteEngine::new();
         let spec = suite.setup_aces_grading(Some("GoldenHour_Sunrise_LUT"));
         assert_eq!(spec.working_space, "ACEScg");
-        assert_eq!(spec.params.lut_preset_id.as_deref(), Some("GoldenHour_Sunrise_LUT"));
+        assert_eq!(
+            spec.params.lut_preset_id.as_deref(),
+            Some("GoldenHour_Sunrise_LUT")
+        );
     }
 }

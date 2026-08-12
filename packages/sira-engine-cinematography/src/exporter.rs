@@ -4,9 +4,9 @@
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
-use crate::optics::{CameraOptics, DepthOfField};
-use crate::motion::CameraMotionPath;
 use crate::lighting::ThreePointLightingGrid;
+use crate::motion::CameraMotionPath;
+use crate::optics::{CameraOptics, DepthOfField};
 use serde::{Deserialize, Serialize};
 use sira_types::SiraResult;
 

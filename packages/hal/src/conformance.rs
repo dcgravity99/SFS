@@ -4,8 +4,8 @@
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
-use sira_types::SiraResult;
 use crate::device::HalDeviceInfo;
+use sira_types::SiraResult;
 
 pub fn run_hal_conformance_suite(device: &HalDeviceInfo) -> SiraResult<()> {
     let _ = device;

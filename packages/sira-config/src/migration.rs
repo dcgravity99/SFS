@@ -4,8 +4,8 @@
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
-use std::path::Path;
 use sira_types::{SiraError, SiraErrorCode, SiraResult};
+use std::path::Path;
 
 pub fn migrate_config_file(path: &Path) -> SiraResult<()> {
     if !path.exists() {

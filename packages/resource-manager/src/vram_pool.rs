@@ -4,9 +4,9 @@
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
+use sira_types::SiraResult;
 use std::sync::atomic::{AtomicUsize, Ordering};
 use std::sync::Arc;
-use sira_types::SiraResult;
 
 #[derive(Clone)]
 pub struct VramPool {

@@ -1,8 +1,12 @@
-/* ============================================================================
- * Siragugal Film Studio
- * Copyright (C) 2026 Siragugal Film Studio Contributors
- * Licensed under Apache-2.0 or MIT.
- * ============================================================================ */
+/*
+============================================================================
+
+Siragugal Film Studio
+Copyright (C) 2026 Siragugal Film Studio Contributors
+Licensed under Apache-2.0 or MIT.
+
+============================================================================
+*/
 
 use serde::{Deserialize, Serialize};
 use sira_types::SiraResult;
@@ -19,11 +23,10 @@ pub struct SubEngineDagOrchestrator;
 
 impl SubEngineDagOrchestrator {
     pub fn validate_dag(nodes: &[DagNode]) -> SiraResult<bool> {
-        // Cycle detection, orphan node validation, schema version checks
         for node in nodes {
             if node.dependencies.contains(&node.node_id) {
                 return SiraResult::Error(sira_types::SiraError {
-                    code: sira_types::SiraErrorCode::WorkflowCycleDetected,
+                    code: sira_types::SiraErrorCode::WorkflowDagCycleDetected,
                     error_name: "DAG_CYCLE_DETECTED".to_string(),
                     category: "WORKFLOW_AUTOMATION_ENGINE".to_string(),
                     severity: "ERROR".to_string(),
@@ -35,6 +38,7 @@ impl SubEngineDagOrchestrator {
                 });
             }
         }
+
         SiraResult::Success(true)
     }
 }

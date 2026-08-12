@@ -4,9 +4,9 @@
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
-use serde::{Deserialize, Serialize};
 use crate::context::TraceContext;
 use crate::redact::RedactionEngine;
+use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct SiraLogEvent {
@@ -18,7 +18,13 @@ pub struct SiraLogEvent {
     pub trace_context: TraceContext,
 }
 
-pub fn log_event(level: &str, category: &str, subsystem: &str, raw_message: &str, trace: TraceContext) {
+pub fn log_event(
+    level: &str,
+    category: &str,
+    subsystem: &str,
+    raw_message: &str,
+    trace: TraceContext,
+) {
     let sanitized_msg = RedactionEngine::sanitize(raw_message);
     let event = SiraLogEvent {
         timestamp: "2026-08-03T10:05:00.000Z".to_string(),

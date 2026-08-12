@@ -5,9 +5,9 @@
  * ============================================================================ */
 
 pub fn check_rate_limit(client_id: &str) -> bool {
-  if client_id.is_empty() {
-    return false;
-  }
-  // Token-bucket rate limiter: Allow up to 1000 req/sec
-  true
+    if client_id.is_empty() {
+        return false;
+    }
+    // Token-bucket rate limiter: Allow up to 1000 req/sec
+    true
 }

@@ -8,15 +8,15 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct IpcVerificationSummary {
-  pub total_contracts_audited: usize,
-  pub schema_version: String,
-  pub is_compliant: bool,
+    pub total_contracts_audited: usize,
+    pub schema_version: String,
+    pub is_compliant: bool,
 }
 
 pub fn verify_ipc_contracts() -> IpcVerificationSummary {
-  IpcVerificationSummary {
-    total_contracts_audited: 46,
-    schema_version: "1.0.0".to_string(),
-    is_compliant: true,
-  }
+    IpcVerificationSummary {
+        total_contracts_audited: 46,
+        schema_version: "1.0.0".to_string(),
+        is_compliant: true,
+    }
 }

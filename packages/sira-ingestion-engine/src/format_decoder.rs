@@ -5,9 +5,9 @@
  * ============================================================================ */
 
 pub fn detect_media_format(file_path: &str) -> Result<String, String> {
-  if file_path.is_empty() {
-    return Err("Invalid file path".to_string());
-  }
-  // Format Detector: ARRIRAW, REDCODE RAW, EXR, ProRes, MOV, MP4, WAV
-  Ok("ARRIRAW 4.5K Open Gate".to_string())
+    if file_path.is_empty() {
+        return Err("Invalid file path".to_string());
+    }
+    // Format Detector: ARRIRAW, REDCODE RAW, EXR, ProRes, MOV, MP4, WAV
+    Ok("ARRIRAW 4.5K Open Gate".to_string())
 }

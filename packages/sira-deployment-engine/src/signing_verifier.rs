@@ -5,8 +5,8 @@
  * ============================================================================ */
 
 pub fn verify_code_signature(package_path: &str) -> Result<bool, String> {
-  if package_path.is_empty() {
-    return Err("Invalid package path".to_string());
-  }
-  Ok(true)
+    if package_path.is_empty() {
+        return Err("Invalid package path".to_string());
+    }
+    Ok(true)
 }

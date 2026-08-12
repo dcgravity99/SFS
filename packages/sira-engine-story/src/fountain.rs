@@ -36,7 +36,10 @@ impl FountainParser {
 
         for line in lines {
             let trimmed = line.trim();
-            if trimmed.starts_with("INT.") || trimmed.starts_with("EXT.") || trimmed.starts_with("INT/EXT") {
+            if trimmed.starts_with("INT.")
+                || trimmed.starts_with("EXT.")
+                || trimmed.starts_with("INT/EXT")
+            {
                 if current_scene_num > 0 {
                     scenes.push(ScriptScene {
                         scene_number: current_scene_num,

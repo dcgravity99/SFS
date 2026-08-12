@@ -4,24 +4,23 @@
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
-pub mod dispatcher;
-pub mod compositor;
-pub mod upscaler;
 pub mod checkpoint;
-pub mod container;
-pub mod layer_compositor;
-pub mod vfx_engine;
 pub mod color_suite;
+pub mod compositor;
+pub mod container;
+pub mod dispatcher;
+pub mod layer_compositor;
+pub mod upscaler;
+pub mod vfx_engine;
 
-pub use dispatcher::*;
-pub use compositor::*;
-pub use upscaler::*;
 pub use checkpoint::*;
-pub use container::*;
-pub use layer_compositor::*;
-pub use vfx_engine::*;
 pub use color_suite::*;
-
+pub use compositor::*;
+pub use container::*;
+pub use dispatcher::*;
+pub use layer_compositor::*;
+pub use upscaler::*;
+pub use vfx_engine::*;
 
 use sira_types::SiraResult;
 

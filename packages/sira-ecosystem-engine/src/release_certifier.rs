@@ -5,5 +5,5 @@
  * ============================================================================ */
 
 pub fn generate_master_certificate() -> Result<String, String> {
-  Ok("MASTER_60_MODULE_ARCHITECTURE_CERTIFICATE.md".to_string())
+    Ok("MASTER_60_MODULE_ARCHITECTURE_CERTIFICATE.md".to_string())
 }

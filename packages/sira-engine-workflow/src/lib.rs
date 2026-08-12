@@ -1,17 +1,21 @@
-/* ============================================================================
- * Siragugal Film Studio
- * Copyright (C) 2026 Siragugal Film Studio Contributors
- * Licensed under Apache-2.0 or MIT.
- * ============================================================================ */
+/*
+============================================================================
 
-pub mod pipeline;
-pub mod orchestrator;
+Siragugal Film Studio
+Copyright (C) 2026 Siragugal Film Studio Contributors
+Licensed under Apache-2.0 or MIT.
+
+============================================================================
+*/
+
 pub mod batch;
+pub mod orchestrator;
+pub mod pipeline;
 pub mod recovery;
 
-pub use pipeline::*;
-pub use orchestrator::*;
 pub use batch::*;
+pub use orchestrator::*;
+pub use pipeline::*;
 pub use recovery::*;
 
 use sira_types::SiraResult;
@@ -24,8 +28,20 @@ impl WorkflowAutomationEngine {
     }
 
     pub fn execute_pipeline(&self, spec: PipelineExecutionSpec) -> SiraResult<String> {
-        let status = ScriptToScreenPipelineCoordinator::execute(spec)?;
-        SiraResult::Success(status.pipeline_id)
+        match ScriptToScreenPipelineCoordinator::execute(spec) {
+            SiraResult::Success(status) => SiraResult::Success(status.pipeline_id),
+
+            SiraResult::PartialSuccess { data, warnings } => SiraResult::PartialSuccess {
+                data: data.pipeline_id,
+                warnings,
+            },
+
+            SiraResult::Error(error) => SiraResult::Error(error),
+
+            SiraResult::Progress { progress, stage } => SiraResult::Progress { progress, stage },
+
+            SiraResult::Cancelled { reason } => SiraResult::Cancelled { reason },
+        }
     }
 
     pub fn get_pipeline_status(&self, pipeline_id: &str) -> SiraResult<PipelineStatus> {

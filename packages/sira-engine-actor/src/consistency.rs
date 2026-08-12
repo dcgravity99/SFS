@@ -9,7 +9,10 @@ use sira_types::SiraResult;
 pub struct VoiceConsistencyValidator;
 
 impl VoiceConsistencyValidator {
-    pub fn verify_voice_consistency(target_embedding: &[f32], anchor_embedding: &[f32]) -> SiraResult<f32> {
+    pub fn verify_voice_consistency(
+        target_embedding: &[f32],
+        anchor_embedding: &[f32],
+    ) -> SiraResult<f32> {
         if target_embedding.len() != anchor_embedding.len() || target_embedding.is_empty() {
             return SiraResult::Success(0.0);
         }

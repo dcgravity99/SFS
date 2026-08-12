@@ -45,7 +45,10 @@ impl NotificationCenter {
         }
     }
 
-    pub fn sanitize_and_dispatch(&self, mut notification: NotificationMessage) -> NotificationMessage {
+    pub fn sanitize_and_dispatch(
+        &self,
+        mut notification: NotificationMessage,
+    ) -> NotificationMessage {
         notification.title = self.redaction_engine.redact(&notification.title);
         notification.message = self.redaction_engine.redact(&notification.message);
         notification

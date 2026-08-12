@@ -4,8 +4,8 @@
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
-use std::path::Path;
 use sira_types::SiraResult;
+use std::path::Path;
 
 pub struct ProjectLock;
 

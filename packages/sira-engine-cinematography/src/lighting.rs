@@ -8,9 +8,9 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct LightSource {
-    pub name: String,         // Key, Fill, Rim/Backlight
+    pub name: String, // Key, Fill, Rim/Backlight
     pub position: [f32; 3],
-    pub intensity: f32,       // Lux / Lumens multiplier
+    pub intensity: f32,          // Lux / Lumens multiplier
     pub kelvin_temperature: u32, // e.g. 5600K Daylight, 3200K Tungsten
 }
 

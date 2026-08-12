@@ -4,9 +4,9 @@
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
+use crate::categories::CacheCategory;
 use serde::{Deserialize, Serialize};
 use std::path::PathBuf;
-use crate::categories::CacheCategory;
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct CacheMetadataRecord {

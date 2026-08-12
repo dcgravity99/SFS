@@ -18,7 +18,10 @@ pub struct SpatialAudioParams {
 pub struct SpatialAudioCalculator;
 
 impl SpatialAudioCalculator {
-    pub fn compute_panning(listener_pos: [f32; 3], source_pos: [f32; 3]) -> SiraResult<SpatialAudioParams> {
+    pub fn compute_panning(
+        listener_pos: [f32; 3],
+        source_pos: [f32; 3],
+    ) -> SiraResult<SpatialAudioParams> {
         let dx = source_pos[0] - listener_pos[0];
         let dy = source_pos[1] - listener_pos[1];
         let dz = source_pos[2] - listener_pos[2];

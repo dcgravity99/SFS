@@ -4,8 +4,8 @@
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
-use std::collections::HashMap;
 use sira_types::SiraResult;
+use std::collections::HashMap;
 
 pub struct DependencyResolver;
 

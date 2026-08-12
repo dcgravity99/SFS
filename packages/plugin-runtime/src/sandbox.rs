@@ -9,7 +9,11 @@ use sira_types::SiraResult;
 pub struct WasmPluginSandbox;
 
 impl WasmPluginSandbox {
-    pub fn execute_wasm_module(wasm_bytes: &[u8], export_fn: &str, input_json: &str) -> SiraResult<String> {
+    pub fn execute_wasm_module(
+        wasm_bytes: &[u8],
+        export_fn: &str,
+        input_json: &str,
+    ) -> SiraResult<String> {
         let _ = wasm_bytes;
         let _ = export_fn;
         let _ = input_json;

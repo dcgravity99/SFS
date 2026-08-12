@@ -5,13 +5,13 @@
  * ============================================================================ */
 
 pub mod backup_manager;
-pub mod restore_engine;
 pub mod encryption_service;
 pub mod integrity_validator;
 pub mod recovery_tester;
+pub mod restore_engine;
 
 pub use backup_manager::create_backup_snapshot;
-pub use restore_engine::restore_project_checkpoint;
 pub use encryption_service::encrypt_backup_archive;
 pub use integrity_validator::verify_backup_integrity;
 pub use recovery_tester::run_disaster_recovery_test;
+pub use restore_engine::restore_project_checkpoint;

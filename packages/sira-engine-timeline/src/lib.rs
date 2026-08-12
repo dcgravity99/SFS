@@ -4,24 +4,23 @@
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
-pub mod timeline;
-pub mod timecode_sync;
-pub mod track;
-pub mod trimming;
 pub mod exporter;
 pub mod nle_timeline;
+pub mod timecode_sync;
+pub mod timeline;
+pub mod track;
+pub mod trimming;
 
-pub use timeline::*;
-pub use timecode_sync::*;
-pub use track::*;
-pub use trimming::*;
 pub use exporter::*;
 pub use nle_timeline::*;
+pub use timecode_sync::*;
+pub use timeline::*;
+pub use track::*;
+pub use trimming::*;
 
-
+use sira_types::SiraResult;
 use std::collections::HashMap;
 use std::sync::RwLock;
-use sira_types::SiraResult;
 
 pub struct TimelineEngine {
     timelines: RwLock<HashMap<String, NleTimeline>>,
@@ -34,7 +33,12 @@ impl TimelineEngine {
         }
     }
 
-    pub fn create_timeline(&self, name: &str, fps_numerator: u32, fps_denominator: u32) -> SiraResult<String> {
+    pub fn create_timeline(
+        &self,
+        name: &str,
+        fps_numerator: u32,
+        fps_denominator: u32,
+    ) -> SiraResult<String> {
         let id = format!("tl-{}", name.to_lowercase().replace(' ', "-"));
         let timeline = NleTimeline::new(&id, name, fps_numerator, fps_denominator);
         if let Ok(mut map) = self.timelines.write() {
@@ -57,7 +61,12 @@ impl TimelineEngine {
         SiraResult::Success(())
     }
 
-    pub fn split_clip(&self, _timeline_id: &str, clip: TimelineClip, split_frame: u64) -> SiraResult<(TimelineClip, TimelineClip)> {
+    pub fn split_clip(
+        &self,
+        _timeline_id: &str,
+        clip: TimelineClip,
+        split_frame: u64,
+    ) -> SiraResult<(TimelineClip, TimelineClip)> {
         TimelineTrimmingCalculator::razor_split(&clip, split_frame)
     }
 

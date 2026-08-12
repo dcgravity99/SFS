@@ -29,7 +29,13 @@ impl LayerCompositorEngine {
         Self
     }
 
-    pub fn composite_frame_layers(&self, frame: u64, width: u32, height: u32, layers: Vec<CompositorLayer>) -> CompositedFrameSpec {
+    pub fn composite_frame_layers(
+        &self,
+        frame: u64,
+        width: u32,
+        height: u32,
+        layers: Vec<CompositorLayer>,
+    ) -> CompositedFrameSpec {
         CompositedFrameSpec {
             frame_number: frame,
             width,

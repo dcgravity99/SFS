@@ -4,8 +4,8 @@
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
-use serde::{Deserialize, Serialize};
 use crate::layout::SpatialSceneNode;
+use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct SceneSpatialTree {
@@ -22,7 +22,12 @@ impl SceneCompositorEngine {
         Self
     }
 
-    pub fn assemble_scene_spatial_tree(&self, scene_id: &str, nodes: Vec<SpatialSceneNode>, preset: &str) -> SceneSpatialTree {
+    pub fn assemble_scene_spatial_tree(
+        &self,
+        scene_id: &str,
+        nodes: Vec<SpatialSceneNode>,
+        preset: &str,
+    ) -> SceneSpatialTree {
         let total = nodes.len();
         SceneSpatialTree {
             scene_id: scene_id.to_string(),
@@ -40,7 +45,8 @@ mod tests {
     #[test]
     fn test_scene_compositor_tree() {
         let compositor = SceneCompositorEngine::new();
-        let tree = compositor.assemble_scene_spatial_tree("scene_01", vec![], "TamilVillageSunrise");
+        let tree =
+            compositor.assemble_scene_spatial_tree("scene_01", vec![], "TamilVillageSunrise");
         assert_eq!(tree.scene_id, "scene_01");
         assert_eq!(tree.environment_preset, "TamilVillageSunrise");
     }

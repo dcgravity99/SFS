@@ -14,7 +14,20 @@ pub struct AssetTypeRegistry {
 impl AssetTypeRegistry {
     pub fn new() -> Self {
         let mut set = HashSet::new();
-        let builtins = ["Video", "Audio", "Image", "Character", "Actor", "Voice", "Location", "Prop", "Style", "Prompt", "Storyboard", "Script"];
+        let builtins = [
+            "Video",
+            "Audio",
+            "Image",
+            "Character",
+            "Actor",
+            "Voice",
+            "Location",
+            "Prop",
+            "Style",
+            "Prompt",
+            "Storyboard",
+            "Script",
+        ];
         for b in builtins {
             set.insert(b.to_string());
         }

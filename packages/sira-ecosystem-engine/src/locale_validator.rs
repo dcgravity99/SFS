@@ -5,6 +5,6 @@
  * ============================================================================ */
 
 pub fn validate_locale_integrity() -> Result<bool, String> {
-  // Tamil-First Localization Validator: 100% ta-IN primary & en-US fallback
-  Ok(true)
+    // Tamil-First Localization Validator: 100% ta-IN primary & en-US fallback
+    Ok(true)
 }

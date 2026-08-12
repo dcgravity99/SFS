@@ -4,8 +4,8 @@
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
-use sha2::{Sha256, Digest};
 use crate::node::WorkflowNode;
+use sha2::{Digest, Sha256};
 
 pub fn compute_node_input_hash(node: &WorkflowNode, upstream_hashes: &[String]) -> String {
     let mut hasher = Sha256::new();

@@ -5,8 +5,8 @@
  * ============================================================================ */
 
 pub fn revoke_user_session(session_id: &str) -> Result<bool, String> {
-  if session_id.is_empty() {
-    return Err("Invalid session ID".to_string());
-  }
-  Ok(true)
+    if session_id.is_empty() {
+        return Err("Invalid session ID".to_string());
+    }
+    Ok(true)
 }

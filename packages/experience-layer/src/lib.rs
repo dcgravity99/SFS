@@ -4,27 +4,27 @@
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
-pub mod event_bus;
-pub mod progress;
-pub mod notifications;
-pub mod background_jobs;
-pub mod history;
-pub mod undo_redo;
-pub mod diagnostics_obs;
-pub mod status_bar;
 pub mod accessibility;
+pub mod background_jobs;
+pub mod diagnostics_obs;
+pub mod event_bus;
+pub mod history;
+pub mod notifications;
+pub mod progress;
+pub mod status_bar;
 pub mod telemetry;
+pub mod undo_redo;
 
-pub use event_bus::*;
-pub use progress::*;
-pub use notifications::*;
-pub use background_jobs::*;
-pub use history::*;
-pub use undo_redo::*;
-pub use diagnostics_obs::*;
-pub use status_bar::*;
 pub use accessibility::*;
+pub use background_jobs::*;
+pub use diagnostics_obs::*;
+pub use event_bus::*;
+pub use history::*;
+pub use notifications::*;
+pub use progress::*;
+pub use status_bar::*;
 pub use telemetry::*;
+pub use undo_redo::*;
 
 pub struct ExperienceLayer {
     pub event_bus: ExperienceEventBus,

@@ -8,9 +8,9 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct Transform3D {
-    pub position: [f32; 3],  // x, y, z
-    pub rotation: [f32; 3],  // pitch, yaw, roll
-    pub scale: [f32; 3],     // sx, sy, sz
+    pub position: [f32; 3], // x, y, z
+    pub rotation: [f32; 3], // pitch, yaw, roll
+    pub scale: [f32; 3],    // sx, sy, sz
 }
 
 impl Default for Transform3D {

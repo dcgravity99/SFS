@@ -4,13 +4,13 @@
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
-pub mod layout;
 pub mod camera_bounds;
-pub mod props;
+pub mod layout;
 pub mod occlusion;
+pub mod props;
 pub mod scene_compositor;
 
-pub use layout::{Transform3D, SpatialSceneNode};
+pub use layout::{SpatialSceneNode, Transform3D};
 pub use scene_compositor::*;
 
 pub struct SceneEngine;
@@ -28,4 +28,3 @@ impl SceneEngine {
         occlusion::verify_spatial_collisions(scene_id)
     }
 }
-
