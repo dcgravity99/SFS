@@ -1,9 +1,10 @@
 /* ============================================================================
- * Siragugal Film Studio — Module 27: Subtitle & Closed Caption Generator
+ * Siragugal Film Studio — Module 52: AI Storyboard & Animatics Engine
  * Copyright (C) 2026 Siragugal Film Studio Contributors
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
+pub mod animatics;
 pub mod beats;
 pub mod dialogue;
 pub mod fdx;
@@ -11,6 +12,7 @@ pub mod fountain;
 pub mod subtitles;
 pub mod validator;
 
+pub use animatics::*;
 pub use beats::*;
 pub use dialogue::*;
 pub use fdx::*;
