@@ -1,5 +1,5 @@
 /* ============================================================================
- * Siragugal Film Studio — Module 30: Master Media Exporter & Packager
+ * Siragugal Film Studio — Module 30, 41, 42 Packaging & Preservation Engines
  * Copyright (C) 2026 Siragugal Film Studio Contributors
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
@@ -7,12 +7,16 @@
 pub mod bundler;
 pub mod compression;
 pub mod exporter;
+pub mod preservation;
+pub mod qc_validator;
 pub mod signature;
 pub mod validator;
 
 pub use bundler::*;
 pub use compression::*;
 pub use exporter::*;
+pub use preservation::*;
+pub use qc_validator::*;
 pub use signature::*;
 pub use validator::*;
 
