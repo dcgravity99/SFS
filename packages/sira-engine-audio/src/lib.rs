@@ -1,11 +1,12 @@
 /* ============================================================================
- * Siragugal Film Studio — Module 40: AI Music & Score Generation / Cue Engine
+ * Siragugal Film Studio — Module 51: AI Audio Spatialization & Dolby Atmos Engine
  * Copyright (C) 2026 Siragugal Film Studio Contributors
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
 pub mod adr;
 pub mod audio;
+pub mod dolby_atmos;
 pub mod exporter;
 pub mod mixer;
 pub mod multitrack_mixer;
@@ -17,6 +18,7 @@ pub mod voice;
 
 pub use adr::*;
 pub use audio::*;
+pub use dolby_atmos::*;
 pub use exporter::*;
 pub use mixer::*;
 pub use multitrack_mixer::*;
