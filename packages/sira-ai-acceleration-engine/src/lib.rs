@@ -1,16 +1,18 @@
 /* ============================================================================
- * Siragugal Film Studio
+ * Siragugal Film Studio — Module 34: Fine-Tuning & Custom LoRA Training Pipeline Engine
  * Copyright (C) 2026 Siragugal Film Studio Contributors
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
 pub mod inference_benchmark;
+pub mod lora_training;
 pub mod model_cache;
 pub mod model_quantizer;
 pub mod tensorrt_backend;
 pub mod vram_optimizer;
 
 pub use inference_benchmark::benchmark_neural_inference;
+pub use lora_training::*;
 pub use model_cache::clear_model_cache;
 pub use model_quantizer::optimize_model_precision;
 pub use tensorrt_backend::detect_hardware_acceleration;
