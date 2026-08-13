@@ -1,10 +1,11 @@
 /* ============================================================================
- * Siragugal Film Studio
+ * Siragugal Film Studio — Module 37: Advanced Color Grading Engine
  * Copyright (C) 2026 Siragugal Film Studio Contributors
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
 pub mod checkpoint;
+pub mod color_grade;
 pub mod color_suite;
 pub mod compositor;
 pub mod container;
@@ -14,6 +15,7 @@ pub mod upscaler;
 pub mod vfx_engine;
 
 pub use checkpoint::*;
+pub use color_grade::*;
 pub use color_suite::*;
 pub use compositor::*;
 pub use container::*;
