@@ -1,5 +1,5 @@
 /* ============================================================================
- * Siragugal Film Studio — Module 26: AI Dubbing & ADR Engine
+ * Siragugal Film Studio — Module 28: Special Effects (SFX) Sound Library Engine
  * Copyright (C) 2026 Siragugal Film Studio Contributors
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
@@ -10,6 +10,7 @@ pub mod exporter;
 pub mod mixer;
 pub mod multitrack_mixer;
 pub mod music;
+pub mod sfx;
 pub mod spatial;
 pub mod voice;
 
@@ -19,6 +20,7 @@ pub use exporter::*;
 pub use mixer::*;
 pub use multitrack_mixer::*;
 pub use music::*;
+pub use sfx::*;
 pub use spatial::*;
 pub use voice::*;
 
