@@ -1,20 +1,18 @@
-/*
-============================================================================
-
-Siragugal Film Studio
-Copyright (C) 2026 Siragugal Film Studio Contributors
-Licensed under Apache-2.0 or MIT.
-
-============================================================================
-*/
+/* ============================================================================
+ * Siragugal Film Studio — Module 30: Master Media Exporter & Packager
+ * Copyright (C) 2026 Siragugal Film Studio Contributors
+ * Licensed under Apache-2.0 or MIT.
+ * ============================================================================ */
 
 pub mod bundler;
 pub mod compression;
+pub mod exporter;
 pub mod signature;
 pub mod validator;
 
 pub use bundler::*;
 pub use compression::*;
+pub use exporter::*;
 pub use signature::*;
 pub use validator::*;
 
