@@ -1,21 +1,19 @@
-/*
-============================================================================
-
-Siragugal Film Studio
-Copyright (C) 2026 Siragugal Film Studio Contributors
-Licensed under Apache-2.0 or MIT.
-
-============================================================================
-*/
+/* ============================================================================
+ * Siragugal Film Studio — Module 48: AI Production Planning & Scheduling Engine
+ * Copyright (C) 2026 Siragugal Film Studio Contributors
+ * Licensed under Apache-2.0 or MIT.
+ * ============================================================================ */
 
 pub mod batch;
 pub mod orchestrator;
 pub mod pipeline;
+pub mod production_planner;
 pub mod recovery;
 
 pub use batch::*;
 pub use orchestrator::*;
 pub use pipeline::*;
+pub use production_planner::*;
 pub use recovery::*;
 
 use sira_types::SiraResult;
