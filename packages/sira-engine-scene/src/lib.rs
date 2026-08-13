@@ -1,15 +1,17 @@
 /* ============================================================================
- * Siragugal Film Studio
+ * Siragugal Film Studio — Module 46: AI Scene Continuity & Visual Consistency Engine
  * Copyright (C) 2026 Siragugal Film Studio Contributors
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
 pub mod camera_bounds;
+pub mod continuity;
 pub mod layout;
 pub mod occlusion;
 pub mod props;
 pub mod scene_compositor;
 
+pub use continuity::*;
 pub use layout::{SpatialSceneNode, Transform3D};
 pub use scene_compositor::*;
 
