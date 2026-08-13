@@ -10,7 +10,7 @@ use std::path::{Path, PathBuf};
 pub fn package_sfsp_bundle(project_dir: &Path, output_zip: &Path) -> SiraResult<PathBuf> {
     if !project_dir.exists() || !project_dir.is_dir() {
         return SiraResult::Error(SiraError {
-            code: SiraErrorCode::ResourceNotFound,
+            code: SiraErrorCode::UnknownSystemError,
             error_name: "PROJECT_DIRECTORY_NOT_FOUND".to_string(),
             category: "SFSP_ENGINE".to_string(),
             severity: "ERROR".to_string(),
