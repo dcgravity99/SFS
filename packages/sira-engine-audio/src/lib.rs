@@ -1,9 +1,10 @@
 /* ============================================================================
- * Siragugal Film Studio — Module 51: AI Audio Spatialization & Dolby Atmos Engine
+ * Siragugal Film Studio — Module 59: AI Voice Cloning & Accent Localization Engine
  * Copyright (C) 2026 Siragugal Film Studio Contributors
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
+pub mod accent_localization;
 pub mod adr;
 pub mod audio;
 pub mod dolby_atmos;
@@ -16,6 +17,7 @@ pub mod sfx;
 pub mod spatial;
 pub mod voice;
 
+pub use accent_localization::*;
 pub use adr::*;
 pub use audio::*;
 pub use dolby_atmos::*;
