@@ -72,8 +72,10 @@ impl SubtitleGeneratorEngine {
         let mut current_time_ms: u64 = 1000; // Start at 1.0s
 
         for (idx, block) in dialogues.iter().enumerate() {
-            let word_count = block.speech_text.split_whitespace().count();
-            let duration_ms = ((word_count as u64) * 350).max(1500); // ~350ms per word, min 1.5s
+            let char_count = block.speech_text.chars().count();
+
+            let duration_ms = ((char_count as u64) * 80).max(1500);
+
             let start_ms = current_time_ms;
             let end_ms = start_ms + duration_ms;
 

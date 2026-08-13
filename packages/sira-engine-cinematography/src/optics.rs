@@ -28,13 +28,13 @@ pub struct LensOpticsCalculator;
 impl LensOpticsCalculator {
     pub fn compute_dof(optics: &CameraOptics) -> SiraResult<DepthOfField> {
         let f = optics.focal_length_mm / 1000.0; // convert to meters
-        let N = optics.aperture_fstop.max(0.7);
+        let n = optics.aperture_fstop.max(0.7);
         let c = 0.000030f32; // Circle of confusion in meters (35mm sensor default)
 
         let fov_rad = 2.0 * ((optics.sensor_width_mm / (2.0 * optics.focal_length_mm)).atan());
         let fov_deg = fov_rad.to_degrees();
 
-        let hyperfocal = (f * f) / (N * c);
+        let hyperfocal = (f * f) / (n * c);
         let s = optics.focus_distance_meters.max(0.1);
 
         let near_limit = (hyperfocal * s) / (hyperfocal + (s - f));
