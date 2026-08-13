@@ -1,5 +1,5 @@
 /* ============================================================================
- * Siragugal Film Studio — Module 37: Advanced Color Grading Engine
+ * Siragugal Film Studio — Module 38: Visual Effects Compositing & Node Graph Engine
  * Copyright (C) 2026 Siragugal Film Studio Contributors
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
@@ -11,6 +11,7 @@ pub mod compositor;
 pub mod container;
 pub mod dispatcher;
 pub mod layer_compositor;
+pub mod node_graph;
 pub mod upscaler;
 pub mod vfx_engine;
 
@@ -21,6 +22,7 @@ pub use compositor::*;
 pub use container::*;
 pub use dispatcher::*;
 pub use layer_compositor::*;
+pub use node_graph::*;
 pub use upscaler::*;
 pub use vfx_engine::*;
 
