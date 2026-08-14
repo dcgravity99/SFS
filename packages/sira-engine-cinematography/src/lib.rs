@@ -1,9 +1,10 @@
 /* ============================================================================
- * Siragugal Film Studio — Module 57: Real-Time Virtual Set HDR Relighting Engine
+ * Siragugal Film Studio — Module 66: AI Cinematic Style & Visual Language Engine
  * Copyright (C) 2026 Siragugal Film Studio Contributors
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
+pub mod cinematic_style;
 pub mod env_relighting;
 pub mod exporter;
 pub mod lighting;
@@ -12,6 +13,7 @@ pub mod multicam;
 pub mod optics;
 pub mod virtual_cam;
 
+pub use cinematic_style::*;
 pub use env_relighting::*;
 pub use exporter::*;
 pub use lighting::*;

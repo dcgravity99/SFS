@@ -1,5 +1,5 @@
 /* ============================================================================
- * Siragugal Film Studio — Module 59: AI Voice Cloning & Accent Localization Engine
+ * Siragugal Film Studio — Module 65: AI Emotional Arc & Pacing Intelligence Engine
  * Copyright (C) 2026 Siragugal Film Studio Contributors
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
@@ -8,6 +8,7 @@ pub mod accent_localization;
 pub mod adr;
 pub mod audio;
 pub mod dolby_atmos;
+pub mod emotional_pacing;
 pub mod exporter;
 pub mod mixer;
 pub mod multitrack_mixer;
@@ -21,6 +22,7 @@ pub use accent_localization::*;
 pub use adr::*;
 pub use audio::*;
 pub use dolby_atmos::*;
+pub use emotional_pacing::*;
 pub use exporter::*;
 pub use mixer::*;
 pub use multitrack_mixer::*;

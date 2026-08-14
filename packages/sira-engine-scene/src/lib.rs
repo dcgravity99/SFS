@@ -1,32 +1,23 @@
 /* ============================================================================
- * Siragugal Film Studio — Module 46: AI Scene Continuity & Visual Consistency Engine
+ * Siragugal Film Studio — Module 64: AI Scene Dynamics & Spatial Intelligence Engine
  * Copyright (C) 2026 Siragugal Film Studio Contributors
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
-pub mod camera_bounds;
 pub mod continuity;
-pub mod layout;
-pub mod occlusion;
-pub mod props;
-pub mod scene_compositor;
+pub mod environment;
+pub mod scene;
+pub mod scene_dynamics;
 
 pub use continuity::*;
-pub use layout::{SpatialSceneNode, Transform3D};
-pub use scene_compositor::*;
+pub use environment::*;
+pub use scene::*;
+pub use scene_dynamics::*;
 
 pub struct SceneEngine;
 
 impl SceneEngine {
-    pub fn create_scene_layout(scene_id: &str) -> Result<String, String> {
-        layout::create_scene_layout(scene_id)
-    }
-
-    pub fn place_entity(scene_id: &str, node: SpatialSceneNode) -> Result<(), String> {
-        layout::place_entity(scene_id, node)
-    }
-
-    pub fn verify_spatial_collisions(scene_id: &str) -> Result<bool, String> {
-        occlusion::verify_spatial_collisions(scene_id)
+    pub fn new() -> Self {
+        Self
     }
 }

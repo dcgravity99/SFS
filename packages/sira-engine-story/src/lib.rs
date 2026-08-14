@@ -1,24 +1,22 @@
 /* ============================================================================
- * Siragugal Film Studio — Module 52: AI Storyboard & Animatics Engine
+ * Siragugal Film Studio — Module 62: AI Story & Narrative Intelligence Engine
  * Copyright (C) 2026 Siragugal Film Studio Contributors
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
 pub mod animatics;
-pub mod beats;
-pub mod dialogue;
-pub mod fdx;
-pub mod fountain;
-pub mod subtitles;
-pub mod validator;
+pub mod parser;
+pub mod scene;
+pub mod script;
+pub mod story_intelligence;
+pub mod timeline;
 
 pub use animatics::*;
-pub use beats::*;
-pub use dialogue::*;
-pub use fdx::*;
-pub use fountain::*;
-pub use subtitles::*;
-pub use validator::*;
+pub use parser::*;
+pub use scene::*;
+pub use script::*;
+pub use story_intelligence::*;
+pub use timeline::*;
 
 pub struct StoryEngine;
 

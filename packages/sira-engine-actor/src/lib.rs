@@ -1,10 +1,11 @@
 /* ============================================================================
- * Siragugal Film Studio — Module 50: Digital Twin Actor Control Engine
+ * Siragugal Film Studio — Module 63: AI Character & Psychological Profiling Engine
  * Copyright (C) 2026 Siragugal Film Studio Contributors
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
 
 pub mod actor;
+pub mod character_profiling;
 pub mod consistency;
 pub mod dictionary;
 pub mod digital_twin;
@@ -13,6 +14,7 @@ pub mod mocap_retarget;
 pub mod voice;
 
 pub use actor::*;
+pub use character_profiling::*;
 pub use consistency::*;
 pub use dictionary::*;
 pub use digital_twin::*;
