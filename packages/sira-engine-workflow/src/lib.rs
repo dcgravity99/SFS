@@ -1,5 +1,5 @@
 /* ============================================================================
- * Siragugal Film Studio — Module 48: AI Production Planning & Scheduling Engine
+ * Siragugal Film Studio — Module 68: AI Production Pipeline Orchestrator Engine
  * Copyright (C) 2026 Siragugal Film Studio Contributors
  * Licensed under Apache-2.0 or MIT.
  * ============================================================================ */
@@ -7,12 +7,14 @@
 pub mod batch;
 pub mod orchestrator;
 pub mod pipeline;
+pub mod pipeline_orchestrator;
 pub mod production_planner;
 pub mod recovery;
 
 pub use batch::*;
 pub use orchestrator::*;
 pub use pipeline::*;
+pub use pipeline_orchestrator::*;
 pub use production_planner::*;
 pub use recovery::*;
 
